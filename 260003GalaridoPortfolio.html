@@ -92,14 +92,14 @@
             <!-- QCU + ROTC badges — .mini-badge in the CSS gives each
                  one the pill shape + small circular logo -->
             <div class="mini-badge-row">
-              <span class="mini-badge">
+              <a class="mini-badge" href="https://qcu.edu.ph/" target="_blank" rel="noopener">
                 <img src="assets/images/qcu-seal.webp" alt="" />
                 <span>Quezon City University</span>
-              </span>
-              <span class="mini-badge">
+              </a>
+              <a class="mini-badge" href="https://www.facebook.com/qcurotcunitpage" target="_blank" rel="noopener">
                 <img src="assets/images/rotc-crest.jpg" alt="" />
                 <span>NSTP 1 · ROTC</span>
-              </span>
+              </a>
             </div>
 
             <!-- hobby cards — <ul><li> since these are just a list,
@@ -112,22 +112,50 @@
               <li class="hobby-card"><div class="hobby-icon" aria-hidden="true">💡</div><div class="hobby-label">Learning New Tech</div></li>
             </ul>
 
-            <!-- currently-playing games — plain text chips on purpose,
-                 not the games' logo art (see the comment on .game-chip
-                 in the CSS file for why) -->
+            <!-- currently-playing games — text chips linking out to each
+                 game's own official site, not the games' logo art hosted
+                 in my repo (see the comment on .game-chip in the CSS file
+                 for why: that key art is the publisher's copyrighted
+                 promo material, not mine to redistribute) -->
             <p style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-dim); margin-top: 1.6rem;">Currently Playing</p>
             <ul class="game-chip-list">
-              <li class="game-chip">Wuthering Waves</li>
-              <li class="game-chip">Genshin Impact</li>
-              <li class="game-chip">Arknights</li>
-              <li class="game-chip">Neverness to Everness</li>
-              <li class="game-chip">Duet Night Abyss</li>
-              <li class="game-chip">Call of Dragons</li>
-              <li class="game-chip">Mobile Legends: Bang Bang</li>
-              <li class="game-chip">Call of Duty: Mobile</li>
-              <li class="game-chip">Minecraft</li>
-              <li class="game-chip">Roblox</li>
+              <li><a class="game-chip" href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener">Wuthering Waves</a></li>
+              <li><a class="game-chip" href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact</a></li>
+              <li><a class="game-chip" href="https://www.arknights.global/" target="_blank" rel="noopener">Arknights</a></li>
+              <li><a class="game-chip" href="https://nte.perfectworld.com/" target="_blank" rel="noopener">Neverness to Everness</a></li>
+              <li><a class="game-chip" href="https://duetnightabyss.dna-panstudio.com/en" target="_blank" rel="noopener">Duet Night Abyss</a></li>
+              <li><a class="game-chip" href="https://www.callofdragons.com/" target="_blank" rel="noopener">Call of Dragons</a></li>
+              <li><a class="game-chip" href="https://m.mobilelegends.com/" target="_blank" rel="noopener">Mobile Legends: Bang Bang</a></li>
+              <li><a class="game-chip" href="https://www.callofduty.com/mobile" target="_blank" rel="noopener">Call of Duty: Mobile</a></li>
+              <li><a class="game-chip" href="https://www.minecraft.net/" target="_blank" rel="noopener">Minecraft</a></li>
+              <li><a class="game-chip" href="https://www.roblox.com/" target="_blank" rel="noopener">Roblox</a></li>
             </ul>
+
+            <!-- QCU's official Vision/Mission/Shared Values, collapsible
+                 the same zero-JS way as the grade tables further down:
+                 <details>/<summary>, browser handles open/close state -->
+            <details class="info-details">
+              <summary>QCU Vision, Mission &amp; Shared Values</summary>
+              <div class="info-details-body">
+                <div class="vmv-block">
+                  <h4>Vision</h4>
+                  <p>To be an internationally recognized local university committed to innovation and sustainability to achieve positive social impact.</p>
+                </div>
+                <div class="vmv-block">
+                  <h4>Mission</h4>
+                  <p>To provide a comprehensive education that enhances the lives of QCU students for nation building and as world citizens.</p>
+                </div>
+                <div class="vmv-block">
+                  <h4>Shared Values — R.I.S.E.</h4>
+                  <ul class="vmv-values">
+                    <li><strong>R</strong>esiliency</li>
+                    <li><strong>I</strong>nnovativeness</li>
+                    <li><strong>S</strong>tewardship</li>
+                    <li><strong>E</strong>quity</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
           </div>
 
           <!-- quick-fact list — <ul><li> pairs, not a <table>, since
@@ -302,7 +330,7 @@
       <div class="wrap">
         <span class="eyebrow">My Work</span>
         <h2 class="section-title">Projects</h2>
-        <p class="section-lede">A few things I've built outside of coursework — all plain HTML/CSS/JS, no frameworks, hosted free on GitHub Pages.</p>
+        <p class="section-lede">A few things I've built outside of coursework — all plain HTML/CSS/JS, no frameworks, hosted free on GitHub Pages. Built experimentally with AI assistance turning my ideas into working code — some sessions ran long chasing context/token limits before a feature was finished. This WS101 page had AI help too, more than the "experimental" label above suggests.</p>
 
         <div class="project-grid">
           <article class="project-card">

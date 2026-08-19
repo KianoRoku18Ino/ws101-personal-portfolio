@@ -253,7 +253,12 @@ section:first-of-type { border-top: none; }
    but with a tiny circular seal image next to each label, since
    these are actual program affiliations, not just text facts. */
 .mini-badge-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem; }
-.mini-badge { display: flex; align-items: center; gap: 0.5rem; background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 0.4rem 0.9rem 0.4rem 0.4rem; }
+/* now an <a>, not a plain <span> — text-decoration:none + color:inherit
+   stop it from picking up the site-wide blue underlined link style;
+   the border-color hover is the same "this is clickable" cue used on
+   .hobby-card and .project-card elsewhere on the page. */
+.mini-badge { display: flex; align-items: center; gap: 0.5rem; background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 0.4rem 0.9rem 0.4rem 0.4rem; text-decoration: none; color: inherit; transition: border-color 0.15s ease; }
+.mini-badge:hover { border-color: var(--navy); }
 .mini-badge img { width: 26px; height: 26px; border-radius: 50%; }
 .mini-badge span { font-size: 0.8rem; font-weight: 500; }
 
@@ -266,10 +271,28 @@ section:first-of-type { border-top: none; }
 
 /* "Currently Playing" games list — plain text chips on purpose,
    not the actual game logo images. Those wallpapers are official
-   copyrighted art; a text chip says the same thing ("I play this
-   game") without hosting someone else's artwork in my repo. */
+   copyrighted art; a text chip that links out to the game's own
+   site says the same thing ("I play this game, here it is") without
+   hosting someone else's artwork in my repo. */
 .game-chip-list { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1rem; list-style: none; }
-.game-chip { font-family: var(--font-mono); font-size: 0.78rem; background: var(--gold-soft); color: var(--navy-deep); border: 1px solid var(--gold); border-radius: 999px; padding: 0.35rem 0.8rem; }
+.game-chip { display: inline-block; font-family: var(--font-mono); font-size: 0.78rem; background: var(--gold-soft); color: var(--navy-deep); text-decoration: none; border: 1px solid var(--gold); border-radius: 999px; padding: 0.35rem 0.8rem; transition: border-color 0.15s ease, background 0.15s ease; }
+.game-chip:hover { border-color: var(--navy); background: var(--white); }
+
+/* Vision/Mission/Values — reuses the same zero-JS <details> pattern
+   as the grade tables below, just without the timeline dot/line
+   since this one stands alone rather than sitting in a sequence. */
+.info-details { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); margin-top: 1.4rem; }
+.info-details summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.1rem; font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
+.info-details summary::-webkit-details-marker { display: none; }
+.info-details summary::after { content: "+"; margin-left: auto; font-family: var(--font-mono); font-size: 1.1rem; color: var(--navy); transition: transform 0.2s ease; }
+.info-details[open] summary::after { transform: rotate(45deg); }
+.info-details-body { padding: 0 1.1rem 1.1rem; }
+.vmv-block { margin-bottom: 1rem; }
+.vmv-block:last-child { margin-bottom: 0; }
+.vmv-block h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--red); margin-bottom: 0.35rem; }
+.vmv-block p { font-size: 0.9rem; color: var(--ink); }
+.vmv-values { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.vmv-values li { font-size: 0.85rem; background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 999px; padding: 0.3rem 0.7rem; }
 
 /* 5d. ACADEMIC ACHIEVEMENTS
    Honor "ribbon" badges up top (the headline numbers), then a
