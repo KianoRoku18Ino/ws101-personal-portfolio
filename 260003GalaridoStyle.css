@@ -3,426 +3,322 @@
    My stylesheet for WS101 Activity 1 — Personal Web Page.
    Karl Ian Galarido, BSIT-1D.
 
-   How I organized this file (same order top to bottom as the
-   page reads):
-     1. Google Fonts import
-     2. Variables (:root) — every color/font is defined once
-        here, then reused everywhere with var(--name)
-     3. Reset — kills each browser's inconsistent defaults
-     4. Layout basics (page width, section spacing)
-     5. One block per section, same order as the HTML
-     6. Small reusable pieces (buttons, badges, chips)
-     7. Phone breakpoint at the bottom
+   This file is organized top to bottom in the same order the
+   page reads:
+     1. Colors and fonts (my variables)
+     2. Reset (removes browser default spacing)
+     3. Layout basics (page width, section spacing)
+     4. One block per section, same order as the HTML file
+     5. The one phone screen adjustment, at the very bottom
    ============================================================ */
 
-/* 1. FONTS — three jobs, three faces:
-   Spectral (serif) for headings, since QCU's own wordmark and my
-   certificates all use a classic serif look.
-   Public Sans for body text — it's the typeface the US federal
-   government's own design system uses, built for clear/official
-   reading, which fit the "university page" tone.
-   JetBrains Mono for small labels/eyebrows/grade numbers, so they
-   read as "data" instead of blending into regular sentences. */
-@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* 1. FONTS
+   I used one font for headings (Spectral, a serif) and one for
+   body text (Public Sans, a sans-serif). Loading them from
+   Google Fonts is the reason my headings and paragraphs don't
+   look like the browser's plain default font. */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap');
 
-/* 2. VARIABLES
-   Palette is not random — it's the Philippine flag's own colors
-   (blue/red/gold) plus QCU's seal colors, since that's the theme
-   I asked for. Change any hex here and it updates the whole site. */
+/* My colors, kept in one place. I picked the Philippine flag's
+   own colors (blue, red, gold) since that's the theme I wanted.
+   Anywhere I write var(--navy) below, it means "use this color".
+   If I ever want to change my blue, I only have to edit it here
+   once instead of hunting through the whole file. */
 :root {
-  --navy: #0038A8;          /* flag blue — links, headers, primary color */
-  --navy-deep: #041C4A;     /* darker navy — nav bar + footer bg */
-  --red: #CE1126;           /* flag red — accents, ribbons, submit button */
-  --gold: #FCD116;          /* flag gold — highlights, the sunburst rays */
-  --gold-soft: #FFF6D6;     /* pale gold — soft background tint */
-  --paper: #FAF9F5;         /* warm off-white — main page bg */
+  --navy: #0038A8;
+  --navy-deep: #041C4A;
+  --red: #CE1126;
+  --gold: #FCD116;
+  --gold-soft: #FFF6D6;
+  --bg: #FAF9F5;
   --white: #FFFFFF;
-  --ink: #181A1E;           /* near-black — body text */
-  --ink-dim: #5B6168;       /* gray — secondary/meta text */
-  --line: #E4E1D6;          /* hairline border color everywhere */
-
-  --font-display: 'Spectral', Georgia, serif;
-  --font-body: 'Public Sans', -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-
-  --content-width: 760px;   /* max width of my readable column */
-  --radius: 10px;           /* corner rounding, reused everywhere */
-  --shadow: 0 4px 18px rgba(4, 28, 74, 0.08);
+  --text: #1A1A1A;
+  --text-light: #5B6168;
+  --border: #E4E1D6;
 }
 
-/* 3. RESET */
+/* 2. RESET
+   Every browser adds its own default margin/padding to things
+   like headings and lists. This line sets them all to zero so I
+   am styling from a clean, predictable starting point. */
 * {
-  box-sizing: border-box;   /* padding/border don't enlarge the box anymore */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;  /* animates the jump when a nav link is clicked */
-}
-
-/* Anyone with "reduce motion" on at the OS level gets everything
-   instant instead — accessibility setting, not my personal taste. */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 body {
-  font-family: var(--font-body);
-  background: var(--paper);
-  color: var(--ink);
+  font-family: 'Public Sans', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
 }
 
-/* Visible focus ring for keyboard (Tab-key) users — required for
-   accessibility, never remove without replacing it. */
-a:focus-visible, button:focus-visible, input:focus-visible,
-textarea:focus-visible, select:focus-visible, summary:focus-visible {
-  outline: 3px solid var(--gold);
-  outline-offset: 2px;
-}
+a { color: var(--navy); }
+img { max-width: 100%; display: block; }
 
-a { color: var(--navy); text-decoration-thickness: 1.5px; }
-img { max-width: 100%; display: block; }   /* images can't overflow their box */
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
+h1, h2, h3 {
+  font-family: 'Spectral', Georgia, serif;
   color: var(--navy-deep);
-  font-weight: 600;
-  line-height: 1.15;
 }
 
-/* 4. LAYOUT BASICS */
+/* smooth-scrolls the page when a nav link is clicked, instead of
+   jumping instantly. This one line is the only reason for that
+   animated scroll — no JavaScript involved. */
+html { scroll-behavior: smooth; }
 
-/* .wrap = my centered reading column. I reuse this inside almost
-   every <section> in the HTML. */
+/* 3. LAYOUT BASICS
+   .wrap is my centered column. I reuse this class inside almost
+   every section so the content never touches the edges of a wide
+   screen. */
 .wrap {
-  max-width: var(--content-width);
+  max-width: 760px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* Every top-level <section> gets the same spacing + a thin gold
-   line separating it from the one above — a small repeated nod
-   to the flag's gold, used as structure instead of pure decoration. */
-section { padding: 3.5rem 0; border-top: 1px solid var(--line); }
-section:first-of-type { border-top: none; }
+/* every section gets the same top/bottom spacing, plus a thin
+   line above it to visually separate it from the section before */
+section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border);
+}
+.hero { border-top: none; }
 
 .eyebrow {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--red);
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.6rem;
 }
-.eyebrow::before { content: ''; width: 20px; height: 2px; background: var(--gold); }
 
-.section-title { font-size: clamp(1.5rem, 3.4vw, 2rem); margin-bottom: 0.6rem; }
-.section-lede { color: var(--ink-dim); max-width: 58ch; margin-bottom: 1.8rem; }
+h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
+.lede { color: var(--text-light); margin-bottom: 1.6rem; }
+.mini-title { font-size: 1.05rem; margin: 1.5rem 0 0.6rem; }
 
-/* 5a. TOP NAV
-   Just plain <a href="#id"> anchors in the HTML — the browser's
-   own anchor-jump plus the scroll-behavior:smooth rule above does
-   the animated scrolling. No JS needed for this at all. */
+/* 4a. TOP NAV
+   position: sticky keeps the nav bar visible at the top of the
+   screen even while I scroll further down the page. */
 .topnav {
   position: sticky;
   top: 0;
-  z-index: 10;
   background: var(--navy-deep);
   border-bottom: 3px solid var(--gold);
 }
-
 .topnav-inner {
-  max-width: var(--content-width);
-  margin: 0 auto;
   padding: 0.8rem 1.5rem;
+  /* flexbox puts my logo/name on the left and the nav links on
+     the right, on one row, with space pushed between them */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
-
-.topnav-brand {
+.brand {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--font-display);
-  font-weight: 600;
   color: var(--white);
-  font-size: 1rem;
-  white-space: nowrap;
-  flex-shrink: 0;   /* my name/logo never gets squeezed by the links */
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 600;
 }
-.topnav-brand img { width: 28px; height: 28px; border-radius: 50%; }
+.brand img { width: 26px; height: 26px; border-radius: 50%; }
+.topnav nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+.topnav a { color: #C9D6EE; text-decoration: none; font-size: 0.85rem; }
+.topnav a:hover { color: var(--gold); }
 
-.topnav-links {
-  display: flex;
-  gap: 1.1rem;
-  overflow-x: auto;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  /* flex:1 + min-width:0 together let this row actually shrink
-     and scroll sideways on a narrow phone, instead of pushing the
-     whole page wider than the screen (that was a real bug I fixed —
-     flex items refuse to shrink below their content size by default). */
-  flex: 1;
-  min-width: 0;
-}
-.topnav-links a { color: #C9D6EE; white-space: nowrap; }
-.topnav-links a:hover { color: var(--gold); text-decoration: none; }
-
-/* 5b. HERO
-   My "signature" design choice: a slowly rotating ring of gold
-   rays behind my profile photo, built with nothing but a CSS
-   conic-gradient (no extra image needed). It's on purpose, not
-   random flair — it echoes both the Philippine flag's 8-ray sun
-   AND the sunburst behind the torch on QCU's own seal. */
-.hero { padding-top: 3.5rem; text-align: center; border-top: none; }
-
-.sunburst {
-  position: relative;
-  width: 190px;
-  height: 190px;
-  margin: 0 auto 1.6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.sunburst::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  /* alternating gold/transparent wedges = fake sun-rays */
-  background: repeating-conic-gradient(var(--gold) 0deg 8deg, transparent 8deg 24deg);
-  opacity: 0.55;
-  animation: rotate-rays 40s linear infinite;   /* slow = ambient, not distracting */
-}
-@keyframes rotate-rays { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
+/* 4b. HERO */
+.hero { text-align: center; padding-top: 3rem; }
 .profile-photo {
-  position: relative;
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  object-fit: cover;   /* crops to fill the circle without stretching */
+  /* object-fit: cover crops the photo to fill this circle
+     without squishing or stretching it */
+  object-fit: cover;
   border: 4px solid var(--white);
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 14px rgba(4, 28, 74, 0.15);
+  margin: 0 auto 1.4rem;
+}
+.hero h1 { font-size: 2.2rem; margin-bottom: 0.4rem; }
+.hero .role-line { color: var(--navy); font-weight: 600; margin-bottom: 1rem; }
+.hero .tagline { max-width: 480px; margin: 0 auto; color: var(--text-light); }
+
+/* 4c. ABOUT ME
+   A two-column layout on a wide screen: my bio on the left, my
+   fact list on the right. I used display: grid with two equal
+   columns for this. On a phone this collapses to one column — see
+   the media query at the bottom of this file. */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  align-items: start;
 }
 
-.hero h1 { font-size: clamp(2rem, 6vw, 2.8rem); margin-bottom: 0.4rem; }
-.hero .role-line {
-  font-family: var(--font-mono);
+.badge-links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.2rem 0; }
+.mini-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem 0.4rem 0.4rem;
+  text-decoration: none;
+  color: var(--text);
   font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--navy);
-  margin-bottom: 1.1rem;
 }
-.hero .tagline { max-width: 52ch; margin: 0 auto 1.6rem; color: var(--ink-dim); font-size: 1.05rem; }
-
-/* 5c. ABOUT ME
-   Two columns on a wide screen (bio + hobbies on the left, fact
-   list on the right), one column on phones — see the @media rule
-   near the bottom of this file. */
-.about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2.2rem; align-items: start; }
-
-/* The right-column fact list — plain <ul><li>, not a <table>,
-   because this is a simple label/value list, not real tabular
-   data (my grade tables further down ARE real <table>s). */
-.fact-list { list-style: none; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.2rem 1.4rem; }
-.fact-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px dashed var(--line); font-size: 0.92rem; }
-.fact-list li:last-child { border-bottom: none; }
-.fact-list .fact-label { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-dim); flex: none; }
-.fact-list .fact-value { text-align: right; font-weight: 500; }
-
-/* Small badge strip for QCU + ROTC — same idea as the fact list
-   but with a tiny circular seal image next to each label, since
-   these are actual program affiliations, not just text facts. */
-.mini-badge-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1rem; }
-/* now an <a>, not a plain <span> — text-decoration:none + color:inherit
-   stop it from picking up the site-wide blue underlined link style;
-   the border-color hover is the same "this is clickable" cue used on
-   .hobby-card and .project-card elsewhere on the page. */
-.mini-badge { display: flex; align-items: center; gap: 0.5rem; background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 0.4rem 0.9rem 0.4rem 0.4rem; text-decoration: none; color: inherit; transition: border-color 0.15s ease; }
 .mini-badge:hover { border-color: var(--navy); }
-.mini-badge img { width: 26px; height: 26px; border-radius: 50%; }
-.mini-badge span { font-size: 0.8rem; font-weight: 500; }
+.mini-badge img { width: 24px; height: 24px; border-radius: 50%; }
 
-.hobby-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.9rem; margin-top: 1.4rem; }
-.hobby-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; text-align: center; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-/* pure-CSS hover lift, no JS — skipped automatically under reduced motion (rule above) */
-.hobby-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-.hobby-icon { font-size: 1.7rem; margin-bottom: 0.4rem; }
-.hobby-label { font-size: 0.85rem; color: var(--ink-dim); }
+/* my hobby and game lists — both are just <ul> elements, styled
+   with flexbox so the items wrap into a row instead of stacking
+   in a single column like a normal list would */
+.hobby-list, .game-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.hobby-list li {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.9rem;
+}
+.game-list a {
+  display: inline-block;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  text-decoration: none;
+  color: var(--navy-deep);
+}
+.game-list a:hover { border-color: var(--navy); }
 
-/* "Currently Playing" games list — plain text chips on purpose,
-   not the actual game logo images. Those wallpapers are official
-   copyrighted art; a text chip that links out to the game's own
-   site says the same thing ("I play this game, here it is") without
-   hosting someone else's artwork in my repo. */
-.game-chip-list { display: flex; flex-wrap: wrap; gap: 0.55rem; margin-top: 1rem; list-style: none; }
-.game-chip { display: inline-block; font-family: var(--font-mono); font-size: 0.78rem; background: var(--gold-soft); color: var(--navy-deep); text-decoration: none; border: 1px solid var(--gold); border-radius: 999px; padding: 0.35rem 0.8rem; transition: border-color 0.15s ease, background 0.15s ease; }
-.game-chip:hover { border-color: var(--navy); background: var(--white); }
+/* <details>/<summary> already comes with a working show/hide
+   arrow built into the browser, so I did not need to style or
+   replace it — I only styled the box around it */
+.info-box, .report-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  margin-top: 1rem;
+}
+.info-box summary, .report-box summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Spectral', Georgia, serif;
+}
+.info-box p { margin-top: 0.7rem; font-size: 0.92rem; }
 
-/* Vision/Mission/Values — reuses the same zero-JS <details> pattern
-   as the grade tables below, just without the timeline dot/line
-   since this one stands alone rather than sitting in a sequence. */
-.info-details { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); margin-top: 1.4rem; }
-.info-details summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 0.6rem; padding: 0.9rem 1.1rem; font-family: var(--font-display); font-weight: 600; font-size: 0.95rem; }
-.info-details summary::-webkit-details-marker { display: none; }
-.info-details summary::after { content: "+"; margin-left: auto; font-family: var(--font-mono); font-size: 1.1rem; color: var(--navy); transition: transform 0.2s ease; }
-.info-details[open] summary::after { transform: rotate(45deg); }
-.info-details-body { padding: 0 1.1rem 1.1rem; }
-.vmv-block { margin-bottom: 1rem; }
-.vmv-block:last-child { margin-bottom: 0; }
-.vmv-block h4 { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--red); margin-bottom: 0.35rem; }
-.vmv-block p { font-size: 0.9rem; color: var(--ink); }
-.vmv-values { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.vmv-values li { font-size: 0.85rem; background: var(--gold-soft); border: 1px solid var(--gold); border-radius: 999px; padding: 0.3rem 0.7rem; }
+/* my quick-fact list — label on the left, value on the right,
+   for every <li>. This is a simple label/value list, not a table,
+   since there is no row-and-column relationship to show. */
+.fact-list { list-style: none; background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.2rem; }
+.fact-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px dashed var(--border); font-size: 0.9rem; }
+.fact-list li:last-child { border-bottom: none; }
+.fact-label { color: var(--text-light); }
+.fact-value { font-weight: 600; text-align: right; }
 
-/* 5d. ACADEMIC ACHIEVEMENTS
-   Honor "ribbon" badges up top (the headline numbers), then a
-   Grade 10 -> 11 -> 12 timeline underneath. I used a timeline here
-   on purpose: grade level is a real sequence (earliest to latest),
-   so numbering it this way actually means something — unlike a
-   random numbered list. Each node is a native <details> element,
-   so the expand/collapse works with zero JavaScript. */
-.badge-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-bottom: 2.4rem; }
-.badge { position: relative; background: var(--navy-deep); color: var(--white); border-radius: var(--radius); padding: 1.3rem 1.2rem 1.5rem; overflow: hidden; }
-/* the little gold corner triangle = a redrawn nod to the ribbon
-   seals on my real certificates, without embedding the actual
-   scanned certificate (which would show signatures + my LRN). */
-.badge::after { content: ''; position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; background: var(--gold); transform: rotate(45deg); }
-.badge .badge-school { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gold); margin-bottom: 0.6rem; }
-.badge .badge-school img { width: 20px; height: 20px; border-radius: 50%; background: var(--white); }
-.badge .badge-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.3rem; }
-.badge .badge-meta { font-size: 0.82rem; color: #C9D6EE; }
+/* 4d. ACADEMICS */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+.badge-card {
+  flex: 1 1 200px;
+  background: var(--navy-deep);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+}
+.badge-school { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gold); margin-bottom: 0.4rem; }
+.badge-title { font-family: 'Spectral', Georgia, serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; }
+.badge-meta { font-size: 0.8rem; color: #C9D6EE; }
 
-.timeline { position: relative; padding-left: 1.9rem; }
-.timeline::before { content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
-.timeline-node { position: relative; margin-bottom: 1.1rem; }
-.timeline-node::before { content: ''; position: absolute; left: -1.9rem; top: 0.4rem; width: 13px; height: 13px; border-radius: 50%; background: var(--gold); border: 2px solid var(--navy); }
-
-/* <details>/<summary> = free accordion, browser handles open/close */
-.timeline-node details { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
-.timeline-node summary { cursor: pointer; list-style: none; padding: 0.95rem 1.2rem; display: flex; align-items: center; gap: 0.8rem; font-family: var(--font-display); font-weight: 600; }
-/* both lines below do the same job (hide the browser's default
-   triangle) because different browsers use different methods —
-   WebKit's old way, and the modern ::marker standard. Belt + suspenders. */
-.timeline-node summary::-webkit-details-marker { display: none; }
-.timeline-node summary::marker { display: none; }
-.timeline-node summary::after { content: '+'; margin-left: auto; font-family: var(--font-mono); font-size: 1.2rem; color: var(--navy); transition: transform 0.2s ease; }
-.timeline-node details[open] summary::after { transform: rotate(45deg); }   /* + becomes x when open */
-.timeline-node summary .ga-chip { font-family: var(--font-mono); font-size: 0.72rem; background: var(--gold-soft); color: var(--navy-deep); padding: 0.2rem 0.55rem; border-radius: 999px; }
-.grade-table-wrap { padding: 0 1.2rem 1.2rem; overflow-x: auto; }   /* scrolls sideways instead of squishing the table unreadably */
-
-/* Real <table> markup for the actual grades — this IS tabular
-   data, so a table is the correct element (unlike the fact list
-   above, which is just label/value pairs). */
-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 480px; }
-caption { text-align: left; font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-dim); padding-bottom: 0.5rem; }
-th, td { padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--line); text-align: left; }
-thead th { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--white); background: var(--navy); }
+/* real <table> markup, used only where the data actually has
+   rows and columns — my grade reports */
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.8rem; }
+caption { text-align: left; font-size: 0.75rem; color: var(--text-light); padding-bottom: 0.4rem; }
+th, td { padding: 0.45rem 0.55rem; border-bottom: 1px solid var(--border); text-align: left; }
+thead th { background: var(--navy); color: var(--white); font-size: 0.72rem; text-transform: uppercase; }
 tbody tr:nth-child(even) { background: #F4F2EA; }
-/* full-width label row that splits a table into groups (Core /
-   Applied & Specialized) — matches how my actual report card
-   itself groups the subjects. */
-tr.group-row th { background: var(--navy-deep); color: var(--gold); font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.4rem 0.6rem; }
-tbody th[scope="row"] { font-weight: 500; color: var(--ink); }
-td.grade-final { font-family: var(--font-mono); font-weight: 600; color: var(--navy-deep); }
-tfoot td { font-family: var(--font-mono); font-weight: 700; color: var(--navy-deep); border-top: 2px solid var(--navy); border-bottom: none; }
+tr.group-row th { background: var(--navy-deep); color: var(--gold); font-size: 0.72rem; text-transform: uppercase; }
+td.final { font-weight: 700; color: var(--navy-deep); }
+tfoot td { font-weight: 700; color: var(--navy-deep); border-top: 2px solid var(--navy); border-bottom: none; }
 
-/* 5e. PROJECTS
-   Three real repos of mine, shown as simple cards. Each card links
-   out to GitHub instead of me re-explaining the whole project here
-   — keeps this page from turning into a second README. */
-.project-grid { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
-.project-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem 1.4rem; transition: border-color 0.15s ease; }
-.project-card:hover { border-color: var(--navy); }
-.project-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
-.project-card .project-desc { color: var(--ink-dim); font-size: 0.9rem; margin-bottom: 0.9rem; }
-.project-card .project-links { display: flex; flex-wrap: wrap; gap: 1rem; font-family: var(--font-mono); font-size: 0.78rem; }
-.project-card .stack-tag { display: inline-block; margin-top: 0.6rem; font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--navy); background: var(--gold-soft); padding: 0.2rem 0.6rem; border-radius: 999px; }
+/* 4e. MEDIA
+   A fixed-height box around each iframe keeps the embedded video
+   a reasonable size no matter what the video itself reports. */
+.embed-box { width: 100%; height: 300px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; }
+.embed-box iframe { width: 100%; height: 100%; border: 0; }
 
-/* 5f. MEDIA
-   Two ideas shown on purpose, side by side: a real <iframe> embed
-   (the honest way to show an actual YouTube video), and a small
-   separate demo of the native <audio>/<video> tag's multi-<source>
-   fallback trick. */
-.media-block { margin-bottom: 2rem; }
-.media-block h3 { font-size: 1.1rem; margin-bottom: 0.7rem; }
-/* aspect-ratio keeps the iframe's 16:9 shape correct at any width,
-   without needing JS to recalculate anything on resize. */
-.embed-frame { aspect-ratio: 16 / 9; width: 100%; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); }
-.embed-frame iframe { width: 100%; height: 100%; border: 0; }
-.demo-callout { background: var(--gold-soft); border: 1px dashed var(--gold); border-radius: var(--radius); padding: 1rem 1.2rem; margin-top: 1.8rem; }
-.demo-callout .demo-label { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--red); display: block; margin-bottom: 0.5rem; }
-.demo-callout audio, .demo-callout video { width: 100%; margin-top: 0.6rem; border-radius: 8px; }
-
-/* 5g. CONNECT
-   My <form> uses action="mailto:..." — no server exists here, so
-   this just hands the filled-in fields to the visitor's own email
-   app. Honest ceiling of what HTML/CSS alone can do for a "send"
-   button, explained again as a note right on the page itself. */
-.connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-.contact-form { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; }
-.form-row { margin-bottom: 1rem; }
-.form-row label { display: block; font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-dim); margin-bottom: 0.35rem; }
-.form-row input, .form-row textarea, .form-row select { width: 100%; font-family: var(--font-body); font-size: 0.95rem; padding: 0.6rem 0.7rem; border: 1px solid var(--line); border-radius: 7px; background: var(--paper); color: var(--ink); }
+/* 4f. CONNECT
+   My form has no server behind it, so action="mailto:..." (set
+   in the HTML) is what makes "Send Message" open the visitor's
+   email app instead of actually submitting anywhere. */
+.connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+.contact-form { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 1.3rem; }
+.form-row { margin-bottom: 0.9rem; }
+.form-row label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-light); margin-bottom: 0.3rem; }
+.form-row input, .form-row textarea, .form-row select {
+  width: 100%;
+  font-family: 'Public Sans', Arial, sans-serif;
+  font-size: 0.95rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+}
 .form-row textarea { resize: vertical; min-height: 90px; }
-.radio-group { display: flex; gap: 1.2rem; flex-wrap: wrap; }
-.radio-group label { display: flex; align-items: center; gap: 0.4rem; font-family: var(--font-body); text-transform: none; letter-spacing: normal; font-size: 0.9rem; color: var(--ink); }
+.radio-group { display: flex; gap: 1.2rem; }
+.radio-group label { display: flex; align-items: center; gap: 0.4rem; font-weight: 400; font-size: 0.9rem; color: var(--text); }
 .radio-group input { width: auto; }
-.btn-submit { font-family: var(--font-mono); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; background: var(--red); color: var(--white); border: none; padding: 0.75rem 1.4rem; border-radius: 7px; cursor: pointer; transition: background 0.15s ease; }
-.btn-submit:hover { background: #A50E1E; }
-.form-note { font-size: 0.8rem; color: var(--ink-dim); margin-top: 0.7rem; }
+button[type="submit"] {
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button[type="submit"]:hover { background: #A50E1E; }
 
-.link-card-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-.link-card { display: flex; align-items: center; gap: 0.8rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.9rem 1.1rem; text-decoration: none; transition: border-color 0.15s ease; }
-.link-card:hover { border-color: var(--navy); text-decoration: none; }
-.link-card .link-icon { font-size: 1.3rem; flex: none; }
-.link-card .link-text { display: flex; flex-direction: column; }
-.link-card .link-label { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-dim); }
-.link-card .link-value { color: var(--ink); font-weight: 500; font-size: 0.9rem; }
+.link-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+.link-list a {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+.link-list a:hover { border-color: var(--navy); }
 
-/* 5h. FOOTER */
-footer { background: var(--navy-deep); color: #C9D6EE; border-top: 3px solid var(--gold); padding: 2.2rem 0; text-align: center; font-size: 0.85rem; }
-footer img { width: 36px; height: 36px; margin: 0 auto 0.8rem; border-radius: 50%; }
-footer a { color: var(--gold); }
+/* 4g. FOOTER */
+footer { background: var(--navy-deep); color: #C9D6EE; border-top: 3px solid var(--gold); padding: 2rem 0; text-align: center; font-size: 0.85rem; }
+footer img { width: 34px; height: 34px; margin: 0 auto 0.7rem; border-radius: 50%; }
 
-/* 6. SHARED PIECES */
-
-/* Skip link — first focusable thing on the page for keyboard/
-   screen-reader users, invisible until it receives Tab focus. */
-.skip-link { position: absolute; left: -999px; top: 0; background: var(--gold); color: var(--navy-deep); padding: 0.6rem 1rem; font-family: var(--font-mono); font-size: 0.8rem; z-index: 100; }
-.skip-link:focus { left: 1rem; top: 1rem; }
-
-/* one-time gentle entrance for the hero on page load — fully
-   disabled under prefers-reduced-motion (rule near the top) */
-.fade-up { animation: fade-up 0.7s ease both; }
-@keyframes fade-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-
-/* 7. PHONE BREAKPOINT
-   One breakpoint is all this layout needs — two-column grids
-   collapse to one column, spacing tightens up a bit. */
+/* 5. PHONE SCREEN
+   Below 640px wide, my two-column grids become one column, and
+   the form fields stack the same way the fact list already does. */
 @media (max-width: 640px) {
-  section { padding: 2.6rem 0; }
   .about-grid, .connect-grid { grid-template-columns: 1fr; }
-  .topnav-links { font-size: 0.68rem; gap: 0.85rem; }
-  .fact-list li { flex-direction: column; gap: 0.15rem; }
-  .fact-list .fact-value { text-align: left; }
 }
