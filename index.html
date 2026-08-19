@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--
+  260003GalaridoPortfolio.html
+  WS101 Activity 1 — my Personal Web Page.
+  Karl Ian Ranay Galarido | BSIT-1D | Quezon City University
+
+  No JavaScript anywhere in this project. Every interactive-feeling
+  bit — the grade toggles, the smooth nav scroll, the hover lifts —
+  is plain HTML + CSS the browser already knows how to do.
+
+  Reads top to bottom the same way the page displays: Nav -> Hero ->
+  About -> Academics -> Projects -> Media -> Connect -> Footer.
+  Styling all lives in 260003GalaridoStyle.css (linked below) — I
+  left a short comment wherever a class here is the one doing the
+  actual styling work over in that file, so I can trace how the two
+  files connect.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- makes the page render at the phone's real width instead of a
+       zoomed-out desktop view — the CSS breakpoint depends on this -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karl Ian Galarido — Personal Web Page</title>
+  <meta name="description" content="Personal web page of Karl Ian Ranay Galarido, 1st Year BSIT student at Quezon City University." />
+  <!-- everything about color/font/layout lives in this one external
+       file, per the assignment's external-CSS naming rule -->
+  <link rel="stylesheet" href="260003GalaridoStyle.css" />
+</head>
+<body>
+
+  <!-- invisible until Tab is pressed — jumps a keyboard user past
+       the nav straight to #main-content below -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- ===== TOP NAV — plain #id anchors, browser handles the scroll ===== -->
+  <header class="topnav">
+    <div class="topnav-inner">
+      <span class="topnav-brand">
+        <img src="assets/images/qcu-seal.webp" alt="Quezon City University seal" />
+        Karl Ian Galarido
+      </span>
+      <nav class="topnav-links" aria-label="Page sections">
+        <a href="#about">About</a>
+        <a href="#achievements">Academics</a>
+        <a href="#projects">Projects</a>
+        <a href="#media">Media</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== HERO — the "sunburst" behind my photo is pure CSS
+         (.sunburst in the stylesheet), no extra image file needed ===== -->
+    <section class="hero">
+      <div class="wrap fade-up">
+        <div class="sunburst">
+          <img class="profile-photo" src="assets/images/profile.jpg" alt="Photo of Karl Ian Galarido" />
+        </div>
+        <h1>Karl Ian R. Galarido</h1>
+        <p class="role-line">1st Year BSIT-1D · Quezon City University</p>
+        <p class="tagline">
+          Web Systems and Technologies 1 (WS101) student page — built with
+          hand-written HTML and CSS, no frameworks, no JavaScript.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ME — bio + hobbies on the left, quick facts on
+         the right (.about-grid splits it into that 2-column layout) ===== -->
+    <section id="about">
+      <div class="wrap">
+        <span class="eyebrow">Personal Information</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-lede">A quick introduction, plus the facts someone checking this activity would want.</p>
+
+        <div class="about-grid">
+          <div>
+            <p style="margin-bottom: 1.2rem;">
+              I'm a first-year BSIT student at Quezon City University,
+              currently focused on building a solid foundation in my
+              major program subjects — Introduction to Computing (CC101),
+              Fundamentals of Programming (CC102), and Web Systems and
+              Technologies 1 (WS101) — with the goal of not failing a
+              single one of them. Outside of coursework, I'm generally
+              curious about technology and enjoy learning how things work
+              under the hood.
+            </p>
+
+            <!-- QCU + ROTC badges — .mini-badge in the CSS gives each
+                 one the pill shape + small circular logo -->
+            <div class="mini-badge-row">
+              <span class="mini-badge">
+                <img src="assets/images/qcu-seal.webp" alt="" />
+                <span>Quezon City University</span>
+              </span>
+              <span class="mini-badge">
+                <img src="assets/images/rotc-crest.jpg" alt="" />
+                <span>NSTP 1 · ROTC</span>
+              </span>
+            </div>
+
+            <!-- hobby cards — <ul><li> since these are just a list,
+                 .hobby-grid arranges them into a responsive grid -->
+            <ul class="hobby-grid">
+              <li class="hobby-card"><div class="hobby-icon" aria-hidden="true">🎮</div><div class="hobby-label">Gaming</div></li>
+              <li class="hobby-card"><div class="hobby-icon" aria-hidden="true">🎬</div><div class="hobby-label">Anime &amp; Movies</div></li>
+              <li class="hobby-card"><div class="hobby-icon" aria-hidden="true">📚</div><div class="hobby-label">Reading</div></li>
+              <li class="hobby-card"><div class="hobby-icon" aria-hidden="true">🎧</div><div class="hobby-label">Music</div></li>
+              <li class="hobby-card"><div class="hobby-icon" aria-hidden="true">💡</div><div class="hobby-label">Learning New Tech</div></li>
+            </ul>
+
+            <!-- currently-playing games — plain text chips on purpose,
+                 not the games' logo art (see the comment on .game-chip
+                 in the CSS file for why) -->
+            <p style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-dim); margin-top: 1.6rem;">Currently Playing</p>
+            <ul class="game-chip-list">
+              <li class="game-chip">Wuthering Waves</li>
+              <li class="game-chip">Genshin Impact</li>
+              <li class="game-chip">Arknights</li>
+              <li class="game-chip">Neverness to Everness</li>
+              <li class="game-chip">Duet Night Abyss</li>
+              <li class="game-chip">Call of Dragons</li>
+              <li class="game-chip">Mobile Legends: Bang Bang</li>
+              <li class="game-chip">Call of Duty: Mobile</li>
+              <li class="game-chip">Minecraft</li>
+              <li class="game-chip">Roblox</li>
+            </ul>
+          </div>
+
+          <!-- quick-fact list — <ul><li> pairs, not a <table>, since
+               this is just label/value pairs, not real tabular data
+               (the grade tables further down are where <table> is
+               actually the right element) -->
+          <ul class="fact-list">
+            <li><span class="fact-label">Course</span><span class="fact-value">BSIT 1st Yr – Section SBIT1D</span></li>
+            <li><span class="fact-label">University</span><span class="fact-value">Quezon City University</span></li>
+            <li><span class="fact-label">SHS Track</span><span class="fact-value">STEM</span></li>
+            <li><span class="fact-label">SHS Graduated At</span><span class="fact-value">Eclaro Academy, Inc.</span></li>
+            <li><span class="fact-label">JHS Graduated At</span><span class="fact-value">Judge Feliciano Belmonte Sr. HS</span></li>
+            <li><span class="fact-label">Location</span><span class="fact-value">Quezon City, Philippines</span></li>
+            <li><span class="fact-label">Faith</span><span class="fact-value">Roman Catholic</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ACADEMIC ACHIEVEMENTS — badges up top (.badge-row),
+         then a Grade 10 -> 11 -> 12 <details> timeline (.timeline).
+         Grade level is a real sequence, so numbering it this way
+         actually carries information, unlike a random list. ===== -->
+    <section id="achievements">
+      <div class="wrap">
+        <span class="eyebrow">Academic Achievements</span>
+        <h2 class="section-title">Academics</h2>
+        <p class="section-lede">Honors first, full official grades underneath — click a grade level to expand its report card.</p>
+
+        <div class="badge-row">
+          <div class="badge">
+            <span class="badge-school"><img src="assets/images/jfbshs-seal.jpg" alt="" />JFBSHS · Grade 10</span>
+            <div class="badge-title">With Honors</div>
+            <div class="badge-meta">93% General Average · SY 2022–2023</div>
+          </div>
+          <div class="badge">
+            <span class="badge-school"><img src="assets/images/eclaro-logo.jpg" alt="" />Eclaro Academy · Grade 12</span>
+            <div class="badge-title">With High Honors</div>
+            <div class="badge-meta">95 GWA · 12-STEM 2 · SY 2024–2025</div>
+          </div>
+          <div class="badge">
+            <span class="badge-school"><img src="assets/images/eclaro-logo.jpg" alt="" />Eclaro Academy</span>
+            <div class="badge-title">Q3 Honor Roll</div>
+            <div class="badge-meta">94% Quarterly Average · SY 2024–2025</div>
+          </div>
+        </div>
+
+        <ol class="timeline">
+
+          <!-- Grade 10 -->
+          <li class="timeline-node">
+            <details>
+              <summary>Grade 10 — Judge Feliciano Belmonte Sr. HS <span class="ga-chip">GA 93</span></summary>
+              <div class="grade-table-wrap">
+                <table>
+                  <caption>Report on Learning Progress Achievement — SY 2022–2023, Section: Calcium</caption>
+                  <thead><tr><th scope="col">Learning Area</th><th scope="col">Q1</th><th scope="col">Q2</th><th scope="col">Q3</th><th scope="col">Q4</th><th scope="col">Final</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Filipino 10</th><td>92</td><td>96</td><td>94</td><td>95</td><td class="grade-final">94</td></tr>
+                    <tr><th scope="row">English 10</th><td>90</td><td>92</td><td>93</td><td>96</td><td class="grade-final">93</td></tr>
+                    <tr><th scope="row">Mathematics 10</th><td>92</td><td>94</td><td>95</td><td>96</td><td class="grade-final">94</td></tr>
+                    <tr><th scope="row">Science 10</th><td>92</td><td>93</td><td>93</td><td>93</td><td class="grade-final">93</td></tr>
+                    <tr><th scope="row">Araling Panlipunan 10</th><td>89</td><td>95</td><td>97</td><td>98</td><td class="grade-final">95</td></tr>
+                    <tr><th scope="row">Edukasyon sa Pagpapakatao 10</th><td>92</td><td>90</td><td>91</td><td>94</td><td class="grade-final">92</td></tr>
+                    <tr><th scope="row">Technology &amp; Livelihood Education 10</th><td>86</td><td>89</td><td>93</td><td>93</td><td class="grade-final">90</td></tr>
+                    <tr><th scope="row">MAPEH 10</th><td>87</td><td>89</td><td>92</td><td>96</td><td class="grade-final">91</td></tr>
+                  </tbody>
+                  <tfoot><tr><td>General Average</td><td colspan="4"></td><td>93</td></tr></tfoot>
+                </table>
+              </div>
+            </details>
+          </li>
+
+          <!-- Grade 11 -->
+          <li class="timeline-node">
+            <details>
+              <summary>Grade 11 — Eclaro Academy, Inc. <span class="ga-chip">SY 2023–2024</span></summary>
+              <div class="grade-table-wrap">
+                <table style="margin-bottom: 1.5rem;">
+                  <caption>1st Semester Final Grades</caption>
+                  <thead><tr><th scope="col">Subject</th><th scope="col">1st Qtr</th><th scope="col">2nd Qtr</th><th scope="col">Final</th></tr></thead>
+                  <tbody>
+                    <tr class="group-row"><th colspan="4">Core</th></tr>
+                    <tr><th scope="row">Oral Communication in Context</th><td>96</td><td>97</td><td class="grade-final">97</td></tr>
+                    <tr><th scope="row">Komunikasyon at Pananaliksik sa Wika at Kulturang Pilipino</th><td>94</td><td>96</td><td class="grade-final">95</td></tr>
+                    <tr><th scope="row">General Mathematics</th><td>93</td><td>95</td><td class="grade-final">94</td></tr>
+                    <tr><th scope="row">Earth Science</th><td>91</td><td>94</td><td class="grade-final">93</td></tr>
+                    <tr><th scope="row">Personal Development</th><td>92</td><td>94</td><td class="grade-final">93</td></tr>
+                    <tr><th scope="row">Introduction to the Philosophy of the Human Person</th><td>89</td><td>94</td><td class="grade-final">92</td></tr>
+                    <tr><th scope="row">Physical Education and Health I</th><td>96</td><td>97</td><td class="grade-final">97</td></tr>
+                    <tr class="group-row"><th colspan="4">Applied &amp; Specialized</th></tr>
+                    <tr><th scope="row">General Biology I</th><td>82</td><td>91</td><td class="grade-final">87</td></tr>
+                    <tr><th scope="row">Pre-Calculus</th><td>90</td><td>94</td><td class="grade-final">92</td></tr>
+                  </tbody>
+                  <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>93</td></tr></tfoot>
+                </table>
+                <table>
+                  <caption>2nd Semester Final Grades</caption>
+                  <thead><tr><th scope="col">Subject</th><th scope="col">3rd Qtr</th><th scope="col">4th Qtr</th><th scope="col">Final</th></tr></thead>
+                  <tbody>
+                    <tr class="group-row"><th colspan="4">Core</th></tr>
+                    <tr><th scope="row">Reading and Writing</th><td>95</td><td>95</td><td class="grade-final">95</td></tr>
+                    <tr><th scope="row">Pagbasa at Pagsusuri ng Iba't-Ibang Teksto tungo sa Pananaliksik</th><td>94</td><td>94</td><td class="grade-final">94</td></tr>
+                    <tr><th scope="row">Statistics and Probability</th><td>94</td><td>83</td><td class="grade-final">89</td></tr>
+                    <tr><th scope="row">Contemporary Philippine Arts from the Region</th><td>91</td><td>95</td><td class="grade-final">93</td></tr>
+                    <tr><th scope="row">Physical Education and Health II</th><td>97</td><td>98</td><td class="grade-final">98</td></tr>
+                    <tr class="group-row"><th colspan="4">Applied &amp; Specialized</th></tr>
+                    <tr><th scope="row">Empowerment Technologies</th><td>94</td><td>94</td><td class="grade-final">94</td></tr>
+                    <tr><th scope="row">Research 1</th><td>94</td><td>94</td><td class="grade-final">94</td></tr>
+                    <tr><th scope="row">General Physics I</th><td>94</td><td>97</td><td class="grade-final">96</td></tr>
+                    <tr><th scope="row">General Chemistry I</th><td>96</td><td>96</td><td class="grade-final">96</td></tr>
+                  </tbody>
+                  <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>94</td></tr></tfoot>
+                </table>
+              </div>
+            </details>
+          </li>
+
+          <!-- Grade 12 -->
+          <li class="timeline-node">
+            <details>
+              <summary>Grade 12 — Eclaro Academy, Inc. <span class="ga-chip">GWA 95 · High Honors</span></summary>
+              <div class="grade-table-wrap">
+                <table style="margin-bottom: 1.5rem;">
+                  <caption>1st Semester Final Grades</caption>
+                  <thead><tr><th scope="col">Subject</th><th scope="col">1st Qtr</th><th scope="col">2nd Qtr</th><th scope="col">Final</th></tr></thead>
+                  <tbody>
+                    <tr class="group-row"><th colspan="4">Core</th></tr>
+                    <tr><th scope="row">21st Century Literature from Philippines and World</th><td>97</td><td>98</td><td class="grade-final">98</td></tr>
+                    <tr><th scope="row">Media and Information Literacy</th><td>91</td><td>91</td><td class="grade-final">91</td></tr>
+                    <tr><th scope="row">General Physics II</th><td>90</td><td>92</td><td class="grade-final">91</td></tr>
+                    <tr><th scope="row">Physical Education III</th><td>98</td><td>98</td><td class="grade-final">98</td></tr>
+                    <tr class="group-row"><th colspan="4">Applied &amp; Specialized</th></tr>
+                    <tr><th scope="row">Research 2</th><td>95</td><td>98</td><td class="grade-final">97</td></tr>
+                    <tr><th scope="row">Pagsulat sa Filipino sa Larangan ng Tech-Voc</th><td>95</td><td>95</td><td class="grade-final">95</td></tr>
+                    <tr><th scope="row">Entrepreneurship</th><td>94</td><td>95</td><td class="grade-final">95</td></tr>
+                    <tr><th scope="row">General Chemistry II</th><td>83</td><td>83</td><td class="grade-final">83</td></tr>
+                    <tr><th scope="row">Disaster Risk Reduction and Management</th><td>94</td><td>96</td><td class="grade-final">95</td></tr>
+                  </tbody>
+                  <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>94</td></tr></tfoot>
+                </table>
+                <table>
+                  <caption>2nd Semester Final Grades</caption>
+                  <thead><tr><th scope="col">Subject</th><th scope="col">3rd Qtr</th><th scope="col">4th Qtr</th><th scope="col">Final</th></tr></thead>
+                  <tbody>
+                    <tr class="group-row"><th colspan="4">Core</th></tr>
+                    <tr><th scope="row">Understanding Culture, Society and Politics</th><td>95</td><td>96</td><td class="grade-final">96</td></tr>
+                    <tr><th scope="row">Physical Education IV</th><td>98</td><td>98</td><td class="grade-final">98</td></tr>
+                    <tr class="group-row"><th colspan="4">Applied</th></tr>
+                    <tr><th scope="row">English for Academic and Professional Purposes</th><td>98</td><td>98</td><td class="grade-final">98</td></tr>
+                    <tr><th scope="row">Inquiries, Investigation &amp; Immersion</th><td>96</td><td>97</td><td class="grade-final">97</td></tr>
+                    <tr class="group-row"><th colspan="4">Specialized</th></tr>
+                    <tr><th scope="row">General Biology II</th><td>98</td><td>97</td><td class="grade-final">98</td></tr>
+                    <tr><th scope="row">Basic Calculus</th><td>91</td><td>94</td><td class="grade-final">93</td></tr>
+                    <tr><th scope="row">Work Immersion</th><td>96</td><td>97</td><td class="grade-final">97</td></tr>
+                  </tbody>
+                  <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>97</td></tr></tfoot>
+                </table>
+              </div>
+            </details>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS — three real repos of mine. Each card is a
+         plain <article> styled by .project-card; links point out to
+         GitHub + the live GitHub Pages demo instead of me re-writing
+         each project's whole README in here too. ===== -->
+    <section id="projects">
+      <div class="wrap">
+        <span class="eyebrow">My Work</span>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-lede">A few things I've built outside of coursework — all plain HTML/CSS/JS, no frameworks, hosted free on GitHub Pages.</p>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>QCU Academic OS — Study Guide Portal</h3>
+            <p class="project-desc">A static portal for my own QCU BSIT study guides — sidebar library, in-page viewer, and an optional AI panel that answers questions about whichever guide is open.</p>
+            <div class="project-links">
+              <a href="https://github.com/KianoRoku18Ino/qcu-academic-os-portal" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://kianoroku18ino.github.io/qcu-academic-os-portal/" target="_blank" rel="noopener">Live Demo ↗</a>
+            </div>
+            <span class="stack-tag">HTML · CSS · JS</span>
+          </article>
+
+          <article class="project-card">
+            <h3>Numen — Calculator + AI Math Assistant</h3>
+            <p class="project-desc">A web calculator with a standard keypad mode (arithmetic, scientific, unit/currency conversion) and an "Ask AI" mode for plain-language math questions.</p>
+            <div class="project-links">
+              <a href="https://github.com/KianoRoku18Ino/numen" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://kianoroku18ino.github.io/numen/" target="_blank" rel="noopener">Live Demo ↗</a>
+            </div>
+            <span class="stack-tag">HTML · CSS · JS</span>
+          </article>
+
+          <article class="project-card">
+            <h3>XLProot Guide</h3>
+            <p class="project-desc">A beginner-friendly field guide for running a full Linux desktop on Android inside a PRoot container — prerequisites, install steps, and known device limits.</p>
+            <div class="project-links">
+              <a href="https://github.com/KianoRoku18Ino/xlproot-guide" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://kianoroku18ino.github.io/xlproot-guide/" target="_blank" rel="noopener">Live Demo ↗</a>
+            </div>
+            <span class="stack-tag">HTML · CSS</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEDIA — real iframes for the actual song/video, plus a
+         small separate demo of the <audio>/<video> multi-source
+         fallback trick (.demo-callout marks it as "not the main
+         content" so it doesn't get confused with the real embeds) ===== -->
+    <section id="media">
+      <div class="wrap">
+        <span class="eyebrow">Sights &amp; Sounds</span>
+        <h2 class="section-title">Favorite Song &amp; Video</h2>
+        <p class="section-lede">Both of mine lean the same direction: rain, and the outdoors.</p>
+
+        <div class="media-block">
+          <h3>🎧 Favorite Song</h3>
+          <!-- .embed-frame forces a 16:9 box at any screen width -->
+          <div class="embed-frame">
+            <iframe
+              src="https://www.youtube.com/embed/C-hzP3mOBGY"
+              title="Favorite song — rain sounds ambience"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="media-block">
+          <h3>🎬 Favorite Video</h3>
+          <div class="embed-frame">
+            <iframe
+              src="https://www.youtube.com/embed/4bHUsy74Fss"
+              title="Favorite video — nature and rain"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- format-fallback demo — a browser plays the first <source>
+             it supports and ignores the rest. Not the real content,
+             just showing the technique. Still needs my own short clip
+             dropped into assets/audio/ and assets/video/ before this
+             actually plays anything — a morning-prayer clip works
+             great here if I want that, doesn't have to be rain. -->
+        <div class="demo-callout">
+          <span class="demo-label">Format-fallback demo (not the main content — see note above)</span>
+          <audio controls>
+            <source src="assets/audio/rain-clip.mp3" type="audio/mpeg" />
+            <source src="assets/audio/rain-clip.ogg" type="audio/ogg" />
+            Your browser does not support the audio element.
+          </audio>
+          <video controls>
+            <source src="assets/video/rain-clip.mp4" type="video/mp4" />
+            <source src="assets/video/rain-clip.webm" type="video/webm" />
+            Your browser does not support the video element.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONNECT — form uses action="mailto:..." since there's
+         no server here; opens the visitor's own email app instead ===== -->
+    <section id="connect">
+      <div class="wrap">
+        <span class="eyebrow">Get In Touch</span>
+        <h2 class="section-title">Connect</h2>
+        <p class="section-lede">Fill out the short form, or just use one of the links directly.</p>
+
+        <div class="connect-grid">
+          <form class="contact-form" action="mailto:galaridokarlian7@gmail.com" method="post" enctype="text/plain">
+            <div class="form-row">
+              <label for="visitor-name">Your Name</label>
+              <input type="text" id="visitor-name" name="Name" required />
+            </div>
+            <div class="form-row">
+              <label for="visitor-email">Your Email</label>
+              <!-- type="email" makes the browser check the format
+                   before it lets the form submit -->
+              <input type="email" id="visitor-email" name="Email" required />
+            </div>
+            <div class="form-row">
+              <label for="visitor-how">How Do You Know Me?</label>
+              <select id="visitor-how" name="How we know each other">
+                <option value="Classmate">Classmate</option>
+                <option value="Org-mate">Org-mate</option>
+                <option value="Online">Met online</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label>Rain or Sunshine?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="Weather preference" value="Rain" checked /> Rain</label>
+                <label><input type="radio" name="Weather preference" value="Sunshine" /> Sunshine</label>
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="visitor-message">Message</label>
+              <textarea id="visitor-message" name="Message" placeholder="Say hi!"></textarea>
+            </div>
+            <button class="btn-submit" type="submit">Send Message</button>
+            <p class="form-note">This opens your email app with the message pre-filled — a static page like this one has no server to send it for you.</p>
+          </form>
+
+          <ul class="link-card-list">
+            <li><a class="link-card" href="mailto:galaridokarlian7@gmail.com"><span class="link-icon" aria-hidden="true">📧</span><span class="link-text"><span class="link-label">Gmail</span><span class="link-value">galaridokarlian7@gmail.com</span></span></a></li>
+            <li><a class="link-card" href="https://github.com/KianoRoku18Ino" target="_blank" rel="noopener"><span class="link-icon" aria-hidden="true">💻</span><span class="link-text"><span class="link-label">GitHub</span><span class="link-value">KianoRoku18Ino</span></span></a></li>
+            <li><a class="link-card" href="https://www.facebook.com/Kianforthewin" target="_blank" rel="noopener"><span class="link-icon" aria-hidden="true">👤</span><span class="link-text"><span class="link-label">Facebook</span><span class="link-value">Kianforthewin</span></span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <img src="assets/images/qcu-seal.webp" alt="Quezon City University seal" />
+      <p>Karl Ian Galarido · BSIT-1D · Quezon City University</p>
+      <p>Built with hand-written HTML &amp; CSS for WS101 — Web Systems and Technologies 1.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
