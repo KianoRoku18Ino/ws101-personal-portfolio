@@ -95,6 +95,12 @@
           </a>
         </div>
 
+        <!-- a photo of my current university, right under the QCU
+             badge above it — the same "put a real photo next to the
+             text" idea I used for JFBSHS and Eclaro further down in
+             Academics -->
+        <img class="school-photo" src="assets/images/qcu-campus.png" alt="Quezon City University campus building" />
+
         <!-- <details> is a native HTML tag that gives me a free
              show/hide box. I did not write any JavaScript for
              this — the browser handles the open and close by
@@ -155,6 +161,9 @@
         <!-- Grade 10 -->
         <details class="report-box">
           <summary>Grade 10 — Judge Feliciano Belmonte Sr. HS (GA 93)</summary>
+          <!-- a photo of the actual school building, so this
+               report card isn't just a wall of numbers -->
+          <img class="school-photo" src="assets/images/jfbshs-photo.jpg" alt="Judge Feliciano Belmonte Sr. High School building" />
           <!-- this IS a real table: subjects down the rows, quarters
                across the columns. That row/column relationship is
                why I used a <table> here instead of another <ul> -->
@@ -180,6 +189,9 @@
         <!-- Grade 11 -->
         <details class="report-box">
           <summary>Grade 11 — Eclaro Academy, Inc. (SY 2023&ndash;2024)</summary>
+          <!-- a photo of the school's own signage, same idea as the
+               building photo on the Grade 10 report card above -->
+          <img class="school-photo" src="assets/images/eclaro-photo.jpg" alt="Eclaro Academy signage" />
           <table>
             <caption>1st Semester Final Grades</caption>
             <thead><tr><th scope="col">Subject</th><th scope="col">1st Qtr</th><th scope="col">2nd Qtr</th><th scope="col">Final</th></tr></thead>
@@ -269,37 +281,79 @@
       <div class="wrap">
         <span class="eyebrow">Personal Interests</span>
         <h2>Hobbies &amp; Games</h2>
-        <p class="lede">What I actually spend my free time on.</p>
+        <p class="lede">What I actually spend my free time on — tap a hobby to open it.</p>
 
         <h3 class="mini-title">Hobbies</h3>
-        <!-- I used a <ul> here because this is just a list of
-             items, not information that has to follow an order -->
-        <ul class="bullet-list">
-          <li>🎮 Gaming</li>
-          <li>🎬 Anime &amp; Movies</li>
-          <li>📚 Reading</li>
-          <li>🎧 Music</li>
-          <li>💡 Learning New Tech</li>
-        </ul>
+        <!-- each hobby is now its own <details> box, same show/hide
+             pattern as my grade reports in Academics — no JavaScript,
+             the browser handles open/close on its own. Inside each
+             one I used a <dl> (description list) instead of a plain
+             <ul>, since the content is actual term/description pairs
+             (a game's name + what it is), which is exactly what
+             <dt>/<dd> exists for. -->
+        <details class="report-box">
+          <summary>🎮 Gaming</summary>
+          <!-- my old standalone "Currently Playing" list now lives
+               here instead of its own section. Each title links out
+               to its own official site rather than using the
+               publisher's logo art — that art is copyrighted
+               promotional material, not something I made or have
+               the rights to host. -->
+          <dl class="game-list">
+            <dt><a href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener">Wuthering Waves</a></dt>
+            <dd>Open-world action RPG &mdash; Kuro Games.</dd>
+            <dt><a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact</a></dt>
+            <dd>Open-world gacha RPG &mdash; HoYoverse.</dd>
+            <dt><a href="https://www.arknights.global/" target="_blank" rel="noopener">Arknights</a></dt>
+            <dd>Tower-defense gacha strategy &mdash; Hypergryph.</dd>
+            <dt><a href="https://nte.perfectworld.com/" target="_blank" rel="noopener">Neverness to Everness</a></dt>
+            <dd>Open-world urban fantasy RPG &mdash; Perfect World.</dd>
+            <dt><a href="https://duetnightabyss.dna-panstudio.com/en" target="_blank" rel="noopener">Duet Night Abyss</a></dt>
+            <dd>Action RPG &mdash; NetEase.</dd>
+            <dt><a href="https://callofdragons.farlightgames.com/" target="_blank" rel="noopener">Call of Dragons</a></dt>
+            <dd>Strategy / RTS &mdash; Farlight Games.</dd>
+            <dt><a href="https://www.wherewindsmeetgame.com/m/" target="_blank" rel="noopener">Where Winds Meet</a></dt>
+            <dd>Open-world wuxia action RPG &mdash; Everstone Studio.</dd>
+            <dt><a href="https://m.mobilelegends.com/" target="_blank" rel="noopener">Mobile Legends: Bang Bang</a></dt>
+            <dd>5v5 MOBA &mdash; Moonton.</dd>
+            <dt><a href="https://www.callofduty.com/mobile" target="_blank" rel="noopener">Call of Duty: Mobile</a></dt>
+            <dd>FPS &mdash; Activision.</dd>
+            <dt><a href="https://www.minecraft.net/" target="_blank" rel="noopener">Minecraft</a></dt>
+            <dd>Sandbox survival &amp; building &mdash; Mojang.</dd>
+            <dt><a href="https://www.roblox.com/" target="_blank" rel="noopener">Roblox</a></dt>
+            <dd>User-generated game platform &mdash; Roblox Corp.</dd>
+          </dl>
+        </details>
 
-        <h3 class="mini-title">Currently Playing</h3>
-        <!-- each item links out to that game's own official site.
-             I did this on purpose instead of using the games' logo
-             images, since those logos are the publisher's
-             copyrighted artwork, not something I made or own the
-             rights to post -->
-        <ul class="bullet-list">
-          <li><a href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener">Wuthering Waves</a></li>
-          <li><a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact</a></li>
-          <li><a href="https://www.arknights.global/" target="_blank" rel="noopener">Arknights</a></li>
-          <li><a href="https://nte.perfectworld.com/" target="_blank" rel="noopener">Neverness to Everness</a></li>
-          <li><a href="https://duetnightabyss.dna-panstudio.com/en" target="_blank" rel="noopener">Duet Night Abyss</a></li>
-          <li><a href="https://www.callofdragons.com/" target="_blank" rel="noopener">Call of Dragons</a></li>
-          <li><a href="https://m.mobilelegends.com/" target="_blank" rel="noopener">Mobile Legends: Bang Bang</a></li>
-          <li><a href="https://www.callofduty.com/mobile" target="_blank" rel="noopener">Call of Duty: Mobile</a></li>
-          <li><a href="https://www.minecraft.net/" target="_blank" rel="noopener">Minecraft</a></li>
-          <li><a href="https://www.roblox.com/" target="_blank" rel="noopener">Roblox</a></li>
-        </ul>
+        <details class="report-box">
+          <summary>🎬 Anime &amp; Movies</summary>
+          <!-- reusing my real movie picks from the Media section
+               below instead of repeating them as full video embeds —
+               a name + one-line note here is enough, the actual
+               trailers are already further down the page -->
+          <dl class="game-list">
+            <dt>The Wild Robot</dt>
+            <dd>Favorite movie &mdash; trailer embedded in Media below.</dd>
+            <dt>Flow</dt>
+            <dd>Favorite movie &mdash; trailer embedded in Media below.</dd>
+          </dl>
+          <p class="placeholder-note">Anime list &mdash; still deciding on favorites, will fill this in later.</p>
+        </details>
+
+        <details class="report-box">
+          <summary>📚 Reading</summary>
+          <p class="placeholder-note">List coming soon.</p>
+        </details>
+
+        <details class="report-box">
+          <summary>🎧 Music</summary>
+          <p class="placeholder-note">List coming soon &mdash; favorite song is in Media below.</p>
+        </details>
+
+        <details class="report-box">
+          <summary>💡 Learning New Tech</summary>
+          <p class="placeholder-note">Whatever I'm picking up outside of coursework at the moment &mdash; right now that's mostly just going deeper on HTML/CSS through this activity itself.</p>
+        </details>
       </div>
     </section>
 
@@ -308,7 +362,7 @@
     <section id="media">
       <div class="wrap">
         <span class="eyebrow">Sights &amp; Sounds</span>
-        <h2>Favorite Song &amp; Video</h2>
+        <h2>Favorite Song &amp; Movies</h2>
         <p class="lede">Both of mine lean the same direction: rain, and the outdoors.</p>
 
         <h3 class="mini-title">🎧 Favorite Song</h3>
@@ -324,11 +378,26 @@
           </iframe>
         </div>
 
-        <h3 class="mini-title">🎬 Favorite Video</h3>
+        <h3 class="mini-title">🎬 Favorite Movies</h3>
+        <!-- two movies this time, so I gave each one its own small
+             label above the embed instead of just one heading —
+             otherwise there'd be no way to tell which trailer is
+             which just from looking at the page -->
+        <p class="movie-label">The Wild Robot</p>
         <div class="embed-box">
           <iframe
-            src="https://www.youtube.com/embed/4bHUsy74Fss"
-            title="Favorite video — nature and rain"
+            src="https://www.youtube.com/embed/akAI59gcsIw"
+            title="Favorite movie — The Wild Robot trailer"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <p class="movie-label">Flow</p>
+        <div class="embed-box">
+          <iframe
+            src="https://www.youtube.com/embed/ZgZccxuj2RY"
+            title="Favorite movie — Flow trailer"
             loading="lazy"
             allowfullscreen>
           </iframe>
@@ -360,6 +429,13 @@
               <input type="email" id="visitor-email" name="Email" required />
             </div>
             <div class="form-row">
+              <label for="visitor-site">Your Website (optional)</label>
+              <!-- type="url" is the same idea as type="email" — the
+                   browser checks this looks like a real web address
+                   before letting the form submit -->
+              <input type="url" id="visitor-site" name="Website" placeholder="https://..." />
+            </div>
+            <div class="form-row">
               <label for="visitor-how">How Do You Know Me?</label>
               <select id="visitor-how" name="How we know each other">
                 <option value="Classmate">Classmate</option>
@@ -368,8 +444,15 @@
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div class="form-row">
-              <label>Rain or Sunshine?</label>
+            <!-- <fieldset> + <legend> is the correct pair of tags for
+                 "these inputs all belong to one question" — the
+                 <legend> is the question, everything inside the
+                 <fieldset> is the set of answers. I was using a
+                 plain <label> for this before, which isn't actually
+                 tied to anything since a group of radios has no
+                 single input to label. -->
+            <fieldset class="form-row">
+              <legend>Rain or Sunshine?</legend>
               <!-- both radio buttons share name="Weather preference",
                    which is what makes them a group where only one
                    can be picked at a time -->
@@ -377,6 +460,27 @@
                 <label><input type="radio" name="Weather preference" value="Rain" checked /> Rain</label>
                 <label><input type="radio" name="Weather preference" value="Sunshine" /> Sunshine</label>
               </div>
+            </fieldset>
+            <fieldset class="form-row">
+              <legend>Best Way To Reach You Back? (pick any)</legend>
+              <!-- checkboxes are the right input for this instead of
+                   radios, because more than one can be true at once —
+                   each one here has its own separate name, so any
+                   combination can be checked -->
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="Reply via Email" value="Yes" /> Email</label>
+                <label><input type="checkbox" name="Reply via Facebook" value="Yes" /> Facebook</label>
+                <label><input type="checkbox" name="Reply via GitHub" value="Yes" /> GitHub</label>
+              </div>
+            </fieldset>
+            <div class="form-row">
+              <label for="visitor-hype">How Excited Are You To Connect? (1&ndash;10)</label>
+              <!-- type="range" gives me a slider instead of typed
+                   text — min/max set the two ends, value sets where
+                   it starts. I did not add a live number display
+                   next to it, since updating that on drag needs
+                   JavaScript, which this page intentionally has none of -->
+              <input type="range" id="visitor-hype" name="Hype level (1-10)" min="1" max="10" value="5" />
             </div>
             <div class="form-row">
               <label for="visitor-message">Message</label>
@@ -389,6 +493,7 @@
             <li><a href="mailto:galaridokarlian7@gmail.com">📧 Gmail — galaridokarlian7@gmail.com</a></li>
             <li><a href="https://github.com/KianoRoku18Ino" target="_blank" rel="noopener">💻 GitHub — KianoRoku18Ino</a></li>
             <li><a href="https://www.facebook.com/Kianforthewin" target="_blank" rel="noopener">👤 Facebook — Kianforthewin</a></li>
+            <li><a href="https://x.com/KianShoto" target="_blank" rel="noopener">✖️ X (Twitter) — @KianShoto</a></li>
           </ul>
         </div>
       </div>

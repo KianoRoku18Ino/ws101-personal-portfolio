@@ -177,6 +177,15 @@ h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
 .bullet-list li { margin-bottom: 0.5rem; }
 .bullet-list a { color: var(--navy); }
 
+/* the <dl> inside each hobby's <details> box — dt is the item name
+   (a game, a movie), dd right under it is a one-line note about it.
+   Just spacing, no box/border of its own since it already sits
+   inside .report-box's padding. */
+.game-list dt { font-weight: 600; margin-top: 0.7rem; }
+.game-list dt:first-child { margin-top: 0; }
+.game-list dd { margin: 0.15rem 0 0 0; font-size: 0.85rem; color: var(--text-light); }
+.placeholder-note { font-size: 0.85rem; color: var(--text-light); font-style: italic; margin-top: 0.5rem; }
+
 /* <details>/<summary> already comes with a working show/hide
    arrow built into the browser, so I did not need to style or
    replace it — I only styled the box around it */
@@ -221,6 +230,10 @@ h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
 .badge-title { font-family: 'Spectral', Georgia, serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; }
 .badge-meta { font-size: 0.8rem; color: #C9D6EE; }
 
+/* a plain photo dropped inside a report box — capped height so a
+   tall photo doesn't push the table too far down the page */
+.school-photo { width: 100%; max-height: 220px; object-fit: cover; border-radius: 6px; margin-top: 0.8rem; }
+
 /* real <table> markup, used only where the data actually has
    rows and columns — my grade reports */
 table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.8rem; }
@@ -237,6 +250,7 @@ tfoot td { font-weight: 700; color: var(--navy-deep); border-top: 2px solid var(
    a reasonable size no matter what the video itself reports. */
 .embed-box { width: 100%; height: 300px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 1.5rem; }
 .embed-box iframe { width: 100%; height: 100%; border: 0; }
+.movie-label { font-weight: 600; color: var(--text-light); margin-bottom: 0.4rem; }
 
 /* 4f. CONNECT
    My form has no server behind it, so action="mailto:..." (set
@@ -257,9 +271,28 @@ tfoot td { font-weight: 700; color: var(--navy-deep); border-top: 2px solid var(
   color: var(--text);
 }
 .form-row textarea { resize: vertical; min-height: 90px; }
-.radio-group { display: flex; gap: 1.2rem; }
-.radio-group label { display: flex; align-items: center; gap: 0.4rem; font-weight: 400; font-size: 0.9rem; color: var(--text); }
-.radio-group input { width: auto; }
+
+/* browsers give <fieldset> a default border + padding on their
+   own — I turn that off here since .form-row already handles the
+   spacing I actually want, the same way it does for a plain div */
+fieldset.form-row { border: none; padding: 0; }
+fieldset.form-row legend {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0.3rem;
+  padding: 0;
+}
+
+.radio-group, .checkbox-group { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+.radio-group label, .checkbox-group label { display: flex; align-items: center; gap: 0.4rem; font-weight: 400; font-size: 0.9rem; color: var(--text); }
+.radio-group input, .checkbox-group input { width: auto; }
+
+/* a range slider doesn't need the boxed look the other inputs
+   get above — I remove that border/background/padding here so
+   it just renders as a plain slider */
+.form-row input[type="range"] { border: none; background: none; padding: 0; }
+
 button[type="submit"] {
   font-size: 0.9rem;
   font-weight: 600;
