@@ -37,6 +37,7 @@
       <nav>
         <a href="#about">About</a>
         <a href="#academics">Academics</a>
+        <a href="#interests">Interests</a>
         <a href="#media">Media</a>
         <a href="#connect">Connect</a>
       </nav>
@@ -66,91 +67,61 @@
         <h2>About Me</h2>
         <p class="lede">A short introduction, plus the facts someone reading this page would want to know about me.</p>
 
-        <!-- I used a two-column layout here: my bio and interests on
-             the left, my quick facts on the right. On a phone screen
-             this collapses into one column — see the CSS file's
-             media query at the very bottom for that. -->
-        <div class="about-grid">
+        <!-- one column, top to bottom: bio, then QCU/ROTC, then what
+             QCU stands for, then my quick facts. I dropped the
+             two-column split I had before — with hobbies and games
+             now living in their own section, there was nothing left
+             to put in a second column, so one column reads better. -->
+        <p>
+          I'm a first-year BSIT student at Quezon City University,
+          currently focused on building a solid foundation in my
+          major program subjects — Introduction to Computing (CC101),
+          Fundamentals of Programming (CC102), and Web Systems and
+          Technologies 1 (WS101). Outside of coursework, I'm generally
+          curious about technology and enjoy learning how things
+          work under the hood.
+        </p>
 
-          <div class="about-main">
-            <p>
-              I'm a first-year BSIT student at Quezon City University,
-              currently focused on building a solid foundation in my
-              major program subjects — Introduction to Computing (CC101),
-              Fundamentals of Programming (CC102), and Web Systems and
-              Technologies 1 (WS101). Outside of coursework, I'm generally
-              curious about technology and enjoy learning how things
-              work under the hood.
-            </p>
-
-            <!-- QCU / ROTC badges — each one is just a link with a
-                 small logo and a bit of text inside it -->
-            <div class="badge-links">
-              <a class="mini-badge" href="https://qcu.edu.ph/" target="_blank" rel="noopener">
-                <img src="assets/images/qcu-seal.webp" alt="" />
-                Quezon City University
-              </a>
-              <a class="mini-badge" href="https://www.facebook.com/qcurotcunitpage" target="_blank" rel="noopener">
-                <img src="assets/images/rotc-crest.jpg" alt="" />
-                NSTP 1 &middot; ROTC
-              </a>
-            </div>
-
-            <h3 class="mini-title">Hobbies</h3>
-            <!-- I used a <ul> here because this is just a list of
-                 items, not information that has to follow an order -->
-            <ul class="hobby-list">
-              <li>🎮 Gaming</li>
-              <li>🎬 Anime &amp; Movies</li>
-              <li>📚 Reading</li>
-              <li>🎧 Music</li>
-              <li>💡 Learning New Tech</li>
-            </ul>
-
-            <h3 class="mini-title">Currently Playing</h3>
-            <!-- each item links out to that game's own official
-                 site. I did this on purpose instead of using the
-                 games' logo images, since those logos are the
-                 publisher's copyrighted artwork, not something I
-                 made or own the rights to post -->
-            <ul class="game-list">
-              <li><a href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener">Wuthering Waves</a></li>
-              <li><a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact</a></li>
-              <li><a href="https://www.arknights.global/" target="_blank" rel="noopener">Arknights</a></li>
-              <li><a href="https://nte.perfectworld.com/" target="_blank" rel="noopener">Neverness to Everness</a></li>
-              <li><a href="https://duetnightabyss.dna-panstudio.com/en" target="_blank" rel="noopener">Duet Night Abyss</a></li>
-              <li><a href="https://www.callofdragons.com/" target="_blank" rel="noopener">Call of Dragons</a></li>
-              <li><a href="https://m.mobilelegends.com/" target="_blank" rel="noopener">Mobile Legends: Bang Bang</a></li>
-              <li><a href="https://www.callofduty.com/mobile" target="_blank" rel="noopener">Call of Duty: Mobile</a></li>
-              <li><a href="https://www.minecraft.net/" target="_blank" rel="noopener">Minecraft</a></li>
-              <li><a href="https://www.roblox.com/" target="_blank" rel="noopener">Roblox</a></li>
-            </ul>
-
-            <!-- <details> is a native HTML tag that gives me a free
-                 show/hide box. I did not write any JavaScript for
-                 this — the browser handles the open and close by
-                 itself the moment someone clicks the <summary> line. -->
-            <details class="info-box">
-              <summary>QCU Vision, Mission &amp; Shared Values</summary>
-              <p><strong>Vision:</strong> To be an internationally recognized local university committed to innovation and sustainability to achieve positive social impact.</p>
-              <p><strong>Mission:</strong> To provide a comprehensive education that enhances the lives of QCU students for nation building and as world citizens.</p>
-              <p><strong>Shared Values (R.I.S.E.):</strong> Resiliency, Innovativeness, Stewardship, Equity.</p>
-            </details>
-          </div>
-
-          <!-- my quick facts — a <ul> of label/value pairs, not a
-               <table>, because this is not a grid of rows and
-               columns, just a simple list -->
-          <ul class="fact-list">
-            <li><span class="fact-label">Course</span><span class="fact-value">BSIT 1st Yr &ndash; Section SBIT1D</span></li>
-            <li><span class="fact-label">University</span><span class="fact-value">Quezon City University</span></li>
-            <li><span class="fact-label">SHS Track</span><span class="fact-value">STEM</span></li>
-            <li><span class="fact-label">SHS Graduated At</span><span class="fact-value">Eclaro Academy, Inc.</span></li>
-            <li><span class="fact-label">JHS Graduated At</span><span class="fact-value">Judge Feliciano Belmonte Sr. HS</span></li>
-            <li><span class="fact-label">Location</span><span class="fact-value">Quezon City, Philippines</span></li>
-            <li><span class="fact-label">Faith</span><span class="fact-value">Roman Catholic</span></li>
-          </ul>
+        <!-- QCU / ROTC badges — each one is just a link with a
+             small logo and a bit of text inside it -->
+        <div class="badge-links">
+          <a class="mini-badge" href="https://qcu.edu.ph/" target="_blank" rel="noopener">
+            <img src="assets/images/qcu-seal.webp" alt="" />
+            Quezon City University
+          </a>
+          <a class="mini-badge" href="https://www.facebook.com/qcurotcunitpage" target="_blank" rel="noopener">
+            <img src="assets/images/rotc-crest.jpg" alt="" />
+            NSTP 1 &middot; ROTC
+          </a>
         </div>
+
+        <!-- <details> is a native HTML tag that gives me a free
+             show/hide box. I did not write any JavaScript for
+             this — the browser handles the open and close by
+             itself the moment someone clicks the <summary> line.
+             I put this right after the QCU/ROTC badges on purpose:
+             it's the natural next thing to read once someone knows
+             which school I'm affiliated with. -->
+        <details class="info-box">
+          <summary>QCU Vision, Mission &amp; Shared Values</summary>
+          <p><strong>Vision:</strong> To be an internationally recognized local university committed to innovation and sustainability to achieve positive social impact.</p>
+          <p><strong>Mission:</strong> To provide a comprehensive education that enhances the lives of QCU students for nation building and as world citizens.</p>
+          <p><strong>Shared Values (R.I.S.E.):</strong> Resiliency, Innovativeness, Stewardship, Equity.</p>
+        </details>
+
+        <h3 class="mini-title">Quick Facts</h3>
+        <!-- my quick facts — a <ul> of label/value pairs, not a
+             <table>, because this is not a grid of rows and
+             columns, just a simple list -->
+        <ul class="fact-list">
+          <li><span class="fact-label">Course</span><span class="fact-value">BSIT 1st Yr &ndash; Section SBIT1D</span></li>
+          <li><span class="fact-label">University</span><span class="fact-value">Quezon City University</span></li>
+          <li><span class="fact-label">SHS Track</span><span class="fact-value">STEM</span></li>
+          <li><span class="fact-label">SHS Graduated At</span><span class="fact-value">Eclaro Academy, Inc.</span></li>
+          <li><span class="fact-label">JHS Graduated At</span><span class="fact-value">Judge Feliciano Belmonte Sr. HS</span></li>
+          <li><span class="fact-label">Location</span><span class="fact-value">Quezon City, Philippines</span></li>
+          <li><span class="fact-label">Faith</span><span class="fact-value">Roman Catholic</span></li>
+        </ul>
       </div>
     </section>
 
@@ -286,6 +257,49 @@
             <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>97</td></tr></tfoot>
           </table>
         </details>
+      </div>
+    </section>
+
+    <!-- ===== INTERESTS — hobbies and the games I'm currently
+         playing. This used to live inside About Me, but I moved it
+         down here so the page reads formal-info-first: who I am,
+         then my academics, then the more casual stuff. Both lists
+         are plain bullet points on purpose, nothing fancier. ===== -->
+    <section id="interests">
+      <div class="wrap">
+        <span class="eyebrow">Personal Interests</span>
+        <h2>Hobbies &amp; Games</h2>
+        <p class="lede">What I actually spend my free time on.</p>
+
+        <h3 class="mini-title">Hobbies</h3>
+        <!-- I used a <ul> here because this is just a list of
+             items, not information that has to follow an order -->
+        <ul class="bullet-list">
+          <li>🎮 Gaming</li>
+          <li>🎬 Anime &amp; Movies</li>
+          <li>📚 Reading</li>
+          <li>🎧 Music</li>
+          <li>💡 Learning New Tech</li>
+        </ul>
+
+        <h3 class="mini-title">Currently Playing</h3>
+        <!-- each item links out to that game's own official site.
+             I did this on purpose instead of using the games' logo
+             images, since those logos are the publisher's
+             copyrighted artwork, not something I made or own the
+             rights to post -->
+        <ul class="bullet-list">
+          <li><a href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener">Wuthering Waves</a></li>
+          <li><a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact</a></li>
+          <li><a href="https://www.arknights.global/" target="_blank" rel="noopener">Arknights</a></li>
+          <li><a href="https://nte.perfectworld.com/" target="_blank" rel="noopener">Neverness to Everness</a></li>
+          <li><a href="https://duetnightabyss.dna-panstudio.com/en" target="_blank" rel="noopener">Duet Night Abyss</a></li>
+          <li><a href="https://www.callofdragons.com/" target="_blank" rel="noopener">Call of Dragons</a></li>
+          <li><a href="https://m.mobilelegends.com/" target="_blank" rel="noopener">Mobile Legends: Bang Bang</a></li>
+          <li><a href="https://www.callofduty.com/mobile" target="_blank" rel="noopener">Call of Duty: Mobile</a></li>
+          <li><a href="https://www.minecraft.net/" target="_blank" rel="noopener">Minecraft</a></li>
+          <li><a href="https://www.roblox.com/" target="_blank" rel="noopener">Roblox</a></li>
+        </ul>
       </div>
     </section>
 

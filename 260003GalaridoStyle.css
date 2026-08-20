@@ -149,17 +149,7 @@ h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
 .hero .tagline { max-width: 480px; margin: 0 auto; color: var(--text-light); }
 
 /* 4c. ABOUT ME
-   A two-column layout on a wide screen: my bio on the left, my
-   fact list on the right. I used display: grid with two equal
-   columns for this. On a phone this collapses to one column — see
-   the media query at the bottom of this file. */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
+   One column, top to bottom — no grid needed here anymore. */
 .badge-links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.2rem 0; }
 .mini-badge {
   display: flex;
@@ -176,33 +166,16 @@ h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
 .mini-badge:hover { border-color: var(--navy); }
 .mini-badge img { width: 24px; height: 24px; border-radius: 50%; }
 
-/* my hobby and game lists — both are just <ul> elements, styled
-   with flexbox so the items wrap into a row instead of stacking
-   in a single column like a normal list would */
-.hobby-list, .game-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
+/* my hobbies and currently-playing lists, in the Interests section
+   further down the page — plain bullet points. I let the browser's
+   own default disc marker show and only added spacing between
+   items, instead of turning these into styled cards or pills. */
+.bullet-list {
+  list-style: disc;
+  padding-left: 1.3rem;
 }
-.hobby-list li {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.6rem 0.9rem;
-  font-size: 0.9rem;
-}
-.game-list a {
-  display: inline-block;
-  background: var(--gold-soft);
-  border: 1px solid var(--gold);
-  border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.82rem;
-  text-decoration: none;
-  color: var(--navy-deep);
-}
-.game-list a:hover { border-color: var(--navy); }
+.bullet-list li { margin-bottom: 0.5rem; }
+.bullet-list a { color: var(--navy); }
 
 /* <details>/<summary> already comes with a working show/hide
    arrow built into the browser, so I did not need to style or
@@ -317,8 +290,8 @@ footer { background: var(--navy-deep); color: #C9D6EE; border-top: 3px solid var
 footer img { width: 34px; height: 34px; margin: 0 auto 0.7rem; border-radius: 50%; }
 
 /* 5. PHONE SCREEN
-   Below 640px wide, my two-column grids become one column, and
-   the form fields stack the same way the fact list already does. */
+   Below 640px wide, my one remaining two-column grid (Connect)
+   becomes one column too. */
 @media (max-width: 640px) {
-  .about-grid, .connect-grid { grid-template-columns: 1fr; }
+  .connect-grid { grid-template-columns: 1fr; }
 }
