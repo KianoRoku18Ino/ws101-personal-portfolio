@@ -11,10 +11,9 @@ https://kianoroku18ino.github.io/ws101-personal-portfolio/
 | Section | What's in it |
 |---|---|
 | Hero | Name, program, profile photo |
-| About Me | Bio, QCU/ROTC links, QCU Vision/Mission/Shared Values (collapsible), quick facts |
+| About Me | Bio, QCU/ROTC links, QCU Vision/Mission/Shared Values (collapsible), quick facts, student orgs I'm applying to (honestly tagged "Interviewing," not claimed as membership) |
 | Academics | Honor cards + Grade 10→12 report cards, each inside a `<details>` box, with real school photos |
-| Interests | Five hobbies, each its own `<details>` box — Gaming expands into a full currently-playing list (`<dl>`, each title linking to its own official site) |
-| Media | One real YouTube embed — favorite song |
+| Interests | Five hobbies, each its own `<details>` box — Gaming expands into a full currently-playing list (`<dl>`, each title linking to its own official site); Anime & Movies holds my two real movie picks; Music is a placeholder for a future Spotify-style song/artist list |
 | Connect | A `mailto:` contact form (text, email, url, radio, checkbox, range, select, textarea) and direct links (Gmail, GitHub, Facebook, X) |
 
 ## File Structure

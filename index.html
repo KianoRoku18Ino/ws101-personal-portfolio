@@ -11,7 +11,7 @@
   because the assignment asks for an external stylesheet.
 
   I read this page top to bottom the same way it shows on screen:
-  Nav -> Hero -> About Me -> Academics -> Media -> Connect -> Footer.
+  Nav -> Hero -> About Me -> Academics -> Interests -> Connect -> Footer.
 -->
 <html lang="en">
 <head>
@@ -39,7 +39,6 @@
         <a href="#about">About</a>
         <a href="#academics">Academics</a>
         <a href="#interests">Interests</a>
-        <a href="#media">Media</a>
         <a href="#connect">Connect</a>
       </nav>
     </div>
@@ -127,8 +126,22 @@
           <li><span class="fact-label">SHS Graduated At</span><span class="fact-value">Eclaro Academy, Inc.</span></li>
           <li><span class="fact-label">JHS Graduated At</span><span class="fact-value">Judge Feliciano Belmonte Sr. HS</span></li>
           <li><span class="fact-label">Location</span><span class="fact-value">Quezon City, Philippines</span></li>
-          <li><span class="fact-label">Faith</span><span class="fact-value">Roman Catholic</span></li>
         </ul>
+
+        <h3 class="mini-title">Student Organizations</h3>
+        <!-- I'm not an official member of any of these yet — still
+             in the interview stage for all three, so the tag next
+             to each one says exactly that instead of claiming a
+             membership I don't have. I'll update or remove
+             whichever ones don't work out once I hear back. -->
+        <dl class="dl-list">
+          <dt><a href="https://www.facebook.com/aws.qcu" target="_blank" rel="noopener">AWS Student Builder Group &ndash; QCU</a> <span class="status-tag">Interviewing</span></dt>
+          <dd>Amazon Web Services student community chapter.</dd>
+          <dt><a href="https://www.facebook.com/MicrosoftStudentCommunityQCU" target="_blank" rel="noopener">Microsoft Student Community Group &ndash; QCU</a> <span class="status-tag">Interviewing</span></dt>
+          <dd>Microsoft-affiliated student tech community.</dd>
+          <dt><a href="https://www.facebook.com/qculesit" target="_blank" rel="noopener">LESIT &ndash; QCU</a> <span class="status-tag">Interviewing</span></dt>
+          <dd>League of Excellent Students in Information Technology, under the College of Computer Studies.</dd>
+        </dl>
       </div>
     </section>
 
@@ -300,7 +313,7 @@
                publisher's logo art — that art is copyrighted
                promotional material, not something I made or have
                the rights to host. -->
-          <dl class="game-list">
+          <dl class="dl-list">
             <dt><a href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener">Wuthering Waves</a></dt>
             <dd>Open-world action RPG &mdash; Kuro Games.</dd>
             <dt><a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact</a></dt>
@@ -329,14 +342,14 @@
         <details class="report-box">
           <summary>🎬 Anime &amp; Movies</summary>
           <!-- these two are my only real movie picks on the whole
-               page now — Media used to have full trailer embeds for
-               them too, but I pulled those since they just repeated
-               this list and I wasn't fully settled on the picks -->
-          <dl class="game-list">
+               page — removed the trailer embeds I used to have in a
+               separate Media section, so this list is the only place
+               they live now -->
+          <dl class="dl-list">
             <dt>The Wild Robot</dt>
-            <dd>Favorite movie &mdash; trailer embedded in Media below.</dd>
+            <dd>Favorite movie.</dd>
             <dt>Flow</dt>
-            <dd>Favorite movie &mdash; trailer embedded in Media below.</dd>
+            <dd>Favorite movie.</dd>
           </dl>
           <p class="placeholder-note">Anime list &mdash; still deciding on favorites, will fill this in later.</p>
         </details>
@@ -348,7 +361,7 @@
 
         <details class="report-box">
           <summary>🎧 Music</summary>
-          <p class="placeholder-note">List coming soon &mdash; favorite song is in Media below.</p>
+          <p class="placeholder-note">List coming soon &mdash; planning to list it the way Spotify does: song title, artist, maybe the label, once I've picked favorites.</p>
         </details>
 
         <details class="report-box">
@@ -358,32 +371,6 @@
       </div>
     </section>
 
-    <!-- ===== MEDIA — my favorite song, embedded straight from
-         YouTube using <iframe>. Movies used to live here too as full
-         trailer embeds, but I pulled those back out — they're
-         already listed as text under Interests > Anime & Movies,
-         and I wasn't fully settled on the picks yet. One real,
-         working iframe is enough to demonstrate the tag; better to
-         only lock in an embed once I'm sure of the content. ===== -->
-    <section id="media">
-      <div class="wrap">
-        <span class="eyebrow">Sights &amp; Sounds</span>
-        <h2>Favorite Song</h2>
-        <p class="lede">The one thing that's stayed constant: rain sounds, on repeat.</p>
-
-        <!-- an <iframe> loads another site's page inside a box on
-             my own page — this is how I embed a real YouTube player
-             without needing to host any video file myself -->
-        <div class="embed-box">
-          <iframe
-            src="https://www.youtube.com/embed/C-hzP3mOBGY"
-            title="Favorite song — rain sounds ambience"
-            loading="lazy"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </section>
 
     <!-- ===== CONNECT — a contact form and my direct links ===== -->
     <section id="connect">
