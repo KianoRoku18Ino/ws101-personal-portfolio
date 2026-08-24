@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--
   260003GalaridoPortfolio.html
   WS101 Activity 1 — My Personal Web Page.
@@ -13,130 +13,183 @@
   Nav -> Hero -> About Me -> Academics -> Interests -> Connect -> Footer.
 -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <!-- this line tells the browser to use the phone's real screen
+  <head>
+    <meta charset="UTF-8" />
+    <!-- this line tells the browser to use the phone's real screen
        width instead of showing a zoomed-out desktop view first -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karl Ian Galarido | Personal Web Page</title>
-  <meta name="description" content="Personal web page of Karl Ian Ranay Galarido, 1st Year BSIT student at Quezon City University." />
-  <!-- linking my external CSS file, as required by the activity -->
-  <link rel="stylesheet" href="260003GalaridoStyle.css" />
-</head>
-<body>
-
-  <!-- ===== NAV — a header with a nav inside it. Clicking a link
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karl Ian Galarido | Personal Web Page</title>
+    <meta
+      name="description"
+      content="Personal web page of Karl Ian Ranay Galarido, 1st Year BSIT student at Quezon City University."
+    />
+    <!-- linking my external CSS file, as required by the activity -->
+    <link rel="stylesheet" href="260003GalaridoStyle.css" />
+  </head>
+  <body>
+    <!-- ===== NAV — a header with a nav inside it. Clicking a link
        just jumps to the matching id="" further down the page. This
        is plain browser behavior, I did not write any script for it. ===== -->
-  <header class="topnav">
-    <div class="wrap topnav-inner">
-      <span class="brand">
-        <img src="assets/images/qcu-seal.webp" alt="Quezon City University seal" />
-        Karl Ian Galarido
-      </span>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#academics">Academics</a>
-        <a href="#interests">Interests</a>
-        <a href="#connect">Connect</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- ===== HERO — my photo, name, and a one-line intro ===== -->
-    <section class="hero">
-      <div class="wrap">
-        <img class="profile-photo" src="assets/images/profile.jpg" alt="Photo of Karl Ian Galarido" />
-        <h1>Karl Ian R. Galarido</h1>
-        <p class="role-line">1st Year <abbr title="Bachelor of Science in Information Technology">BSIT</abbr>-1D &middot; Quezon City University</p>
-        <p class="tagline">
-          Web Systems and Technologies 1 (<abbr title="Web Systems and Technologies 1">WS101</abbr>) student page,
-          built with plain HTML and CSS, no frameworks, no JavaScript.
-        </p>
+    <header class="topnav">
+      <div class="wrap topnav-inner">
+        <span class="brand">
+          <img
+            src="assets/images/qcu-seal.webp"
+            alt="Quezon City University seal"
+          />
+          Karl Ian Galarido
+        </span>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#academics">Academics</a>
+          <a href="#interests">Interests</a>
+          <a href="#connect">Connect</a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <!-- ===== ABOUT ME — my bio, my badges, my hobbies, and a
+    <main>
+      <!-- ===== HERO — my photo, name, and a one-line intro ===== -->
+      <section class="hero">
+        <div class="wrap">
+          <img
+            class="profile-photo"
+            src="assets/images/profile.jpg"
+            alt="Photo of Karl Ian Galarido"
+          />
+          <h1>Karl Ian R. Galarido</h1>
+          <p class="role-line">
+            1st Year
+            <abbr title="Bachelor of Science in Information Technology"
+              >BSIT</abbr
+            >-1D &middot; Quezon City University
+          </p>
+          <p class="tagline">
+            Web Systems and Technologies 1 (<abbr
+              title="Web Systems and Technologies 1"
+              >WS101</abbr
+            >) student page, built with plain HTML and CSS, no frameworks, no
+            JavaScript.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== ABOUT ME — my bio, my badges, my hobbies, and a
          list of quick facts about me ===== -->
-    <section id="about">
-      <div class="wrap">
-        <span class="eyebrow">Personal Information</span>
-        <h2>About Me</h2>
-        <p class="lede">A short introduction, plus the facts someone reading this page would want to know about me.</p>
+      <section id="about">
+        <div class="wrap">
+          <span class="eyebrow">Personal Information</span>
+          <h2>About Me</h2>
+          <p class="lede">
+            A short introduction, plus the facts someone reading this page would
+            want to know about me.
+          </p>
 
-        <!-- one column, top to bottom: bio, then QCU/ROTC, then what
+          <!-- one column, top to bottom: bio, then QCU/ROTC, then what
              QCU stands for, then my quick facts. I dropped the
              two-column split I had before — with hobbies and games
              now living in their own section, there was nothing left
              to put in a second column, so one column reads better. -->
-        <p>
-          I'm a first-year BSIT student at Quezon City University,
-          currently focused on building a solid foundation in my
-          major program subjects: Introduction to Computing (CC101),
-          Fundamentals of Programming (CC102), and Web Systems and
-          Technologies 1 (WS101). Outside of coursework, I'm
-          <em>genuinely</em> curious about technology and enjoy
-          learning how things work under the hood.
-        </p>
+          <p>
+            I'm a first-year BSIT student at Quezon City University, currently
+            focused on building a solid foundation in my major program subjects:
+            Introduction to Computing (CC101), Fundamentals of Programming
+            (CC102), and Web Systems and Technologies 1 (WS101). Outside of
+            coursework, I'm
+            <em>genuinely</em> curious about technology and enjoy learning how
+            things work under the hood.
+          </p>
 
-        <!-- a short personal motto as a pull-quote. Pulled from my
+          <!-- a short personal motto as a pull-quote. Pulled from my
              own words in the bio paragraph right above instead of
              writing something new from scratch, since a motto
              should actually sound like me. -->
-        <blockquote class="motto">
-          <p>Still learning how everything under the hood actually works.</p>
-        </blockquote>
+          <blockquote class="motto">
+            <p>Still learning how everything under the hood actually works.</p>
+          </blockquote>
 
-        <!-- QCU / ROTC / CCS badges — each one is just a link with
+          <!-- QCU / ROTC / CCS badges — each one is just a link with
              a small logo and a bit of text inside it. CCS used to be
              its own big <figure> down below, which broke the visual
              set these three badges are supposed to be — moved it up
              here instead, sized and styled exactly like the other
              two. -->
-        <div class="badge-links">
-          <a class="mini-badge" href="https://qcu.edu.ph/" target="_blank" rel="noopener">
-            <img src="assets/images/qcu-seal.webp" alt="" />
-            Quezon City University
-          </a>
-          <a class="mini-badge" href="https://www.facebook.com/qcurotcunitpage" target="_blank" rel="noopener">
-            <img src="assets/images/rotc-crest.jpg" alt="" />
-            <abbr title="National Service Training Program">NSTP</abbr> 1 &middot; <abbr title="Reserve Officers' Training Corps">ROTC</abbr>
-          </a>
-          <a class="mini-badge" href="https://qcu.edu.ph/academics/colleges-and-courses-offered/college-of-information-technology/" target="_blank" rel="noopener">
-            <img src="assets/images/ccs-seal.jpg" alt="" />
-            College of Computer Studies
-          </a>
-        </div>
+          <div class="badge-links">
+            <a
+              class="mini-badge"
+              href="https://qcu.edu.ph/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/images/qcu-seal.webp" alt="" />
+              Quezon City University
+            </a>
+            <a
+              class="mini-badge"
+              href="https://www.facebook.com/qcurotcunitpage"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/images/rotc-crest.jpg" alt="" />
+              <abbr title="National Service Training Program">NSTP</abbr> 1
+              &middot;
+              <abbr title="Reserve Officers' Training Corps">ROTC</abbr>
+            </a>
+            <a
+              class="mini-badge"
+              href="https://qcu.edu.ph/academics/colleges-and-courses-offered/college-of-information-technology/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img src="assets/images/ccs-seal.jpg" alt="" />
+              College of Computer Studies
+            </a>
+          </div>
 
-        <!-- a photo of my current university, right under the badge
+          <!-- a photo of my current university, right under the badge
              row above it — the same "put a real photo next to the
              text" idea I used for JFBSHS and Eclaro further down in
              Academics. Wrapped in <figure>/<figcaption> instead of a
              bare <img> — figcaption is the correct tag for a caption
              that belongs to one specific image, not just any
              paragraph sitting near it. -->
-        <figure class="school-figure">
-          <img class="school-photo" src="assets/images/qcu-campus.png" alt="Quezon City University campus building" />
-          <figcaption><abbr title="Quezon City University">QCU</abbr> main campus.</figcaption>
-        </figure>
+          <figure class="school-figure">
+            <img
+              class="school-photo"
+              src="assets/images/qcu-campus.png"
+              alt="Quezon City University campus building"
+            />
+            <figcaption>
+              <abbr title="Quezon City University">QCU</abbr> main campus.
+            </figcaption>
+          </figure>
 
-        <!-- <details> is a native HTML tag that gives me a free
+          <!-- <details> is a native HTML tag that gives me a free
              show/hide box. I did not write any JavaScript for
              this — the browser handles the open and close by
              itself the moment someone clicks the <summary> line.
              I put this right after the QCU/ROTC badges on purpose:
              it's the natural next thing to read once someone knows
              which school I'm affiliated with. -->
-        <details class="info-box">
-          <summary>QCU Vision, Mission &amp; Shared Values</summary>
-          <p><strong>Vision:</strong> To be an internationally recognized local university committed to innovation and sustainability to achieve positive social impact.</p>
-          <p><strong>Mission:</strong> To provide a comprehensive education that enhances the lives of QCU students for nation building and as world citizens.</p>
-          <p><strong>Shared Values (R.I.S.E.):</strong> Resiliency, Innovativeness, Stewardship, Equity.</p>
-        </details>
+          <details class="info-box">
+            <summary>QCU Vision, Mission &amp; Shared Values</summary>
+            <p>
+              <strong>Vision:</strong> To be an internationally recognized local
+              university committed to innovation and sustainability to achieve
+              positive social impact.
+            </p>
+            <p>
+              <strong>Mission:</strong> To provide a comprehensive education
+              that enhances the lives of QCU students for nation building and as
+              world citizens.
+            </p>
+            <p>
+              <strong>Shared Values (R.I.S.E.):</strong> Resiliency,
+              Innovativeness, Stewardship, Equity.
+            </p>
+          </details>
 
-        <!-- QCU Hymn — embedded via <iframe> from the official
+          <!-- QCU Hymn — embedded via <iframe> from the official
              YouTube upload rather than a local video file. This is
              the correct way to share someone else's copyrighted
              recording: YouTube's own embed feature is built for
@@ -145,544 +198,1154 @@
              anywhere else — a hymn is still a copyrighted song, even
              one about my own school. Credits below are just naming
              who made it, not reproducing their work. -->
-        <details class="info-box">
-          <summary>QCU Hymn</summary>
-          <div class="embed-box">
-            <iframe
-              src="https://www.youtube.com/embed/vEIv27nB988"
-              title="Quezon City University Hymn"
-              loading="lazy"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <p class="credit-line">Originally performed by QCU Chorale. Remastered and arranged by Mr. Toto Sorioso and Dr. Bradford Antonio C. Martinez. Performed by Mr. Jerico Pastoril and Michaela Angelika Bobis.</p>
-        </details>
+          <details class="info-box">
+            <summary>QCU Hymn</summary>
+            <div class="embed-box">
+              <iframe
+                src="https://www.youtube.com/embed/vEIv27nB988"
+                title="Quezon City University Hymn"
+                loading="lazy"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <p class="credit-line">
+              Originally performed by QCU Chorale. Remastered and arranged by
+              Mr. Toto Sorioso and Dr. Bradford Antonio C. Martinez. Performed
+              by Mr. Jerico Pastoril and Michaela Angelika Bobis.
+            </p>
+          </details>
 
-        <!-- Prayer — audio not recorded/sourced yet, same pattern as
+          <!-- Prayer — audio not recorded/sourced yet, same pattern as
              the placeholder notes under Interests further down: say
              what's missing instead of leaving an empty section -->
-        <details class="info-box">
-          <summary>A Prayer</summary>
-          <p class="placeholder-note">Audio not added yet &mdash; still sourcing a properly licensed recording. Will drop in a real &lt;audio&gt; player with format fallbacks once that's sorted.</p>
-        </details>
+          <details class="info-box">
+            <summary>🇭 Philippine National Anthem</summary>
+            <audio controls>
+              <source
+                src="assets/audio/QCU_Philippine_Anthem.mp3"
+                type="audio/mpeg"
+              />
+            </audio>
+            <p class="credit-line">
+              Lupang Hinirang — the Philippine National Anthem.
+            </p>
+          </details>
 
-        <h3 class="mini-title">Quick Facts</h3>
-        <!-- my quick facts — a <ul> of label/value pairs, not a
+          <h3 class="mini-title">Quick Facts</h3>
+          <!-- my quick facts — a <ul> of label/value pairs, not a
              <table>, because this is not a grid of rows and
              columns, just a simple list -->
-        <ul class="fact-list">
-          <li><span class="fact-label">Course</span><span class="fact-value">BSIT 1st Yr &ndash; Section SBIT1D</span></li>
-          <li><span class="fact-label">University</span><span class="fact-value">Quezon City University</span></li>
-          <li><span class="fact-label">SHS Track</span><span class="fact-value">STEM</span></li>
-          <li><span class="fact-label">SHS Graduated At</span><span class="fact-value">Eclaro Academy, Inc.</span></li>
-          <li><span class="fact-label">JHS Graduated At</span><span class="fact-value">Judge Feliciano Belmonte Sr. HS</span></li>
-          <li><span class="fact-label">Location</span><span class="fact-value">Quezon City, Philippines</span></li>
-        </ul>
+          <ul class="fact-list">
+            <li>
+              <span class="fact-label">Course</span
+              ><span class="fact-value"
+                >BSIT 1st Yr &ndash; Section SBIT1D</span
+              >
+            </li>
+            <li>
+              <span class="fact-label">University</span
+              ><span class="fact-value">Quezon City University</span>
+            </li>
+            <li>
+              <span class="fact-label">SHS Track</span
+              ><span class="fact-value">STEM</span>
+            </li>
+            <li>
+              <span class="fact-label">SHS Graduated At</span
+              ><span class="fact-value">Eclaro Academy, Inc.</span>
+            </li>
+            <li>
+              <span class="fact-label">JHS Graduated At</span
+              ><span class="fact-value">Judge Feliciano Belmonte Sr. HS</span>
+            </li>
+            <li>
+              <span class="fact-label">Location</span
+              ><span class="fact-value">Quezon City, Philippines</span>
+            </li>
+          </ul>
 
-        <h3 class="mini-title">Organizations I'm Interested In</h3>
-        <!-- not claiming membership in any of these — this is a
+          <h3 class="mini-title">Organizations I'm Interested In</h3>
+          <!-- not claiming membership in any of these — this is a
              list of orgs I want to join, not orgs I'm already part
              of, so the heading says exactly that instead of using a
              status pill that goes stale the moment my situation
              changes -->
-        <dl class="dl-list">
-          <dt><a href="https://www.facebook.com/aws.qcu" target="_blank" rel="noopener">AWS Student Builder Group &ndash; QCU</a></dt>
-          <dd>Amazon Web Services student community chapter.</dd>
-          <dt><a href="https://www.facebook.com/MicrosoftStudentCommunityQCU" target="_blank" rel="noopener">Microsoft Student Community Group &ndash; QCU</a></dt>
-          <dd>Microsoft-affiliated student tech community.</dd>
-          <dt><a href="https://www.facebook.com/qculesit" target="_blank" rel="noopener">LESIT &ndash; QCU</a></dt>
-          <dd>League of Excellent Students in Information Technology, under the College of Computer Studies.</dd>
-        </dl>
-      </div>
-    </section>
+          <dl class="dl-list">
+            <dt>
+              <a
+                href="https://www.facebook.com/aws.qcu"
+                target="_blank"
+                rel="noopener"
+                >AWS Student Builder Group &ndash; QCU</a
+              >
+            </dt>
+            <dd>Amazon Web Services student community chapter.</dd>
+            <dt>
+              <a
+                href="https://www.facebook.com/MicrosoftStudentCommunityQCU"
+                target="_blank"
+                rel="noopener"
+                >Microsoft Student Community Group &ndash; QCU</a
+              >
+            </dt>
+            <dd>Microsoft-affiliated student tech community.</dd>
+            <dt>
+              <a
+                href="https://www.facebook.com/qculesit"
+                target="_blank"
+                rel="noopener"
+                >LESIT &ndash; QCU</a
+              >
+            </dt>
+            <dd>
+              League of Excellent Students in Information Technology, under the
+              College of Computer Studies.
+            </dd>
+          </dl>
+        </div>
+      </section>
 
-    <!-- ===== ACADEMICS — my honors first, then my actual report
+      <!-- ===== ACADEMICS — my honors first, then my actual report
          cards, grade level by grade level, each one hidden inside
          a <details> box until clicked open ===== -->
-    <section id="academics">
-      <div class="wrap">
-        <span class="eyebrow">Academic Achievements</span>
-        <h2>Academics</h2>
-        <p class="lede">My honors first, then my full official grades underneath. Click a grade level to open its report card.</p>
+      <section id="academics">
+        <div class="wrap">
+          <span class="eyebrow">Academic Achievements</span>
+          <h2>Academics</h2>
+          <p class="lede">
+            My honors first, then my full official grades underneath. Click a
+            grade level to open its report card.
+          </p>
 
-        <div class="badge-row">
-          <div class="badge-card">
-            <p class="badge-school">JFBSHS &middot; Grade 10</p>
-            <p class="badge-title">With Honors</p>
-            <p class="badge-meta">93% General Average &middot; SY 2022&ndash;2023</p>
+          <div class="badge-row">
+            <div class="badge-card">
+              <p class="badge-school">JFBSHS &middot; Grade 10</p>
+              <p class="badge-title">With Honors</p>
+              <p class="badge-meta">
+                93% General Average &middot; SY 2022&ndash;2023
+              </p>
+            </div>
+            <div class="badge-card">
+              <p class="badge-school">Eclaro Academy &middot; Grade 12</p>
+              <p class="badge-title">With High Honors</p>
+              <p class="badge-meta">
+                95 GWA &middot; 12-STEM 2 &middot; SY 2024&ndash;2025
+              </p>
+            </div>
+            <div class="badge-card">
+              <p class="badge-school">Eclaro Academy</p>
+              <p class="badge-title">Q3 Honor Roll</p>
+              <p class="badge-meta">
+                94% Quarterly Average &middot; SY 2024&ndash;2025
+              </p>
+            </div>
           </div>
-          <div class="badge-card">
-            <p class="badge-school">Eclaro Academy &middot; Grade 12</p>
-            <p class="badge-title">With High Honors</p>
-            <p class="badge-meta">95 GWA &middot; 12-STEM 2 &middot; SY 2024&ndash;2025</p>
-          </div>
-          <div class="badge-card">
-            <p class="badge-school">Eclaro Academy</p>
-            <p class="badge-title">Q3 Honor Roll</p>
-            <p class="badge-meta">94% Quarterly Average &middot; SY 2024&ndash;2025</p>
-          </div>
-        </div>
 
-        <!-- Grade 10 -->
-        <details class="report-box">
-          <summary>Grade 10 &middot; Judge Feliciano Belmonte Sr. HS (GA 93)</summary>
-          <!-- a photo of the actual school building, so this
+          <!-- Grade 10 -->
+          <details class="report-box">
+            <summary>
+              Grade 10 &middot; Judge Feliciano Belmonte Sr. HS (GA 93)
+            </summary>
+            <!-- a photo of the actual school building, so this
                report card isn't just a wall of numbers -->
-          <figure class="school-figure">
-            <img class="school-photo" src="assets/images/jfbshs-photo.jpg" alt="Judge Feliciano Belmonte Sr. High School building" />
-            <figcaption>Judge Feliciano Belmonte Sr. High School, Grade 10.</figcaption>
-          </figure>
-          <!-- this IS a real table: subjects down the rows, quarters
+            <figure class="school-figure">
+              <img
+                class="school-photo"
+                src="assets/images/jfbshs-photo.jpg"
+                alt="Judge Feliciano Belmonte Sr. High School building"
+              />
+              <figcaption>
+                Judge Feliciano Belmonte Sr. High School, Grade 10.
+              </figcaption>
+            </figure>
+            <!-- this IS a real table: subjects down the rows, quarters
                across the columns. That row/column relationship is
                why I used a <table> here instead of another <ul> -->
-          <table>
-            <caption>Report on Learning Progress Achievement &middot; SY 2022&ndash;2023</caption>
-            <thead>
-              <tr><th scope="col">Learning Area</th><th scope="col">Q1</th><th scope="col">Q2</th><th scope="col">Q3</th><th scope="col">Q4</th><th scope="col">Final</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">Filipino 10</th><td>92</td><td>96</td><td>94</td><td>95</td><td class="final">94</td></tr>
-              <tr><th scope="row">English 10</th><td>90</td><td>92</td><td>93</td><td>96</td><td class="final">93</td></tr>
-              <tr><th scope="row">Mathematics 10</th><td>92</td><td>94</td><td>95</td><td>96</td><td class="final">94</td></tr>
-              <tr><th scope="row">Science 10</th><td>92</td><td>93</td><td>93</td><td>93</td><td class="final">93</td></tr>
-              <tr><th scope="row">Araling Panlipunan 10</th><td>89</td><td>95</td><td>97</td><td>98</td><td class="final">95</td></tr>
-              <tr><th scope="row">Edukasyon sa Pagpapakatao 10</th><td>92</td><td>90</td><td>91</td><td>94</td><td class="final">92</td></tr>
-              <tr><th scope="row">Technology &amp; Livelihood Education 10</th><td>86</td><td>89</td><td>93</td><td>93</td><td class="final">90</td></tr>
-              <tr><th scope="row">MAPEH 10</th><td>87</td><td>89</td><td>92</td><td>96</td><td class="final">91</td></tr>
-            </tbody>
-            <tfoot><tr><td>General Average</td><td colspan="4"></td><td>93</td></tr></tfoot>
-          </table>
-        </details>
+            <table>
+              <caption>
+                Report on Learning Progress Achievement &middot; SY
+                2022&ndash;2023
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Learning Area</th>
+                  <th scope="col">Q1</th>
+                  <th scope="col">Q2</th>
+                  <th scope="col">Q3</th>
+                  <th scope="col">Q4</th>
+                  <th scope="col">Final</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Filipino 10</th>
+                  <td>92</td>
+                  <td>96</td>
+                  <td>94</td>
+                  <td>95</td>
+                  <td class="final">94</td>
+                </tr>
+                <tr>
+                  <th scope="row">English 10</th>
+                  <td>90</td>
+                  <td>92</td>
+                  <td>93</td>
+                  <td>96</td>
+                  <td class="final">93</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mathematics 10</th>
+                  <td>92</td>
+                  <td>94</td>
+                  <td>95</td>
+                  <td>96</td>
+                  <td class="final">94</td>
+                </tr>
+                <tr>
+                  <th scope="row">Science 10</th>
+                  <td>92</td>
+                  <td>93</td>
+                  <td>93</td>
+                  <td>93</td>
+                  <td class="final">93</td>
+                </tr>
+                <tr>
+                  <th scope="row">Araling Panlipunan 10</th>
+                  <td>89</td>
+                  <td>95</td>
+                  <td>97</td>
+                  <td>98</td>
+                  <td class="final">95</td>
+                </tr>
+                <tr>
+                  <th scope="row">Edukasyon sa Pagpapakatao 10</th>
+                  <td>92</td>
+                  <td>90</td>
+                  <td>91</td>
+                  <td>94</td>
+                  <td class="final">92</td>
+                </tr>
+                <tr>
+                  <th scope="row">Technology &amp; Livelihood Education 10</th>
+                  <td>86</td>
+                  <td>89</td>
+                  <td>93</td>
+                  <td>93</td>
+                  <td class="final">90</td>
+                </tr>
+                <tr>
+                  <th scope="row">MAPEH 10</th>
+                  <td>87</td>
+                  <td>89</td>
+                  <td>92</td>
+                  <td>96</td>
+                  <td class="final">91</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>General Average</td>
+                  <td colspan="4"></td>
+                  <td>93</td>
+                </tr>
+              </tfoot>
+            </table>
+          </details>
 
-        <!-- Grade 11 -->
-        <details class="report-box">
-          <summary>Grade 11 &middot; Eclaro Academy, Inc. (SY 2023&ndash;2024)</summary>
-          <!-- a photo of the school's own signage, same idea as the
+          <!-- Grade 11 -->
+          <details class="report-box">
+            <summary>
+              Grade 11 &middot; Eclaro Academy, Inc. (SY 2023&ndash;2024)
+            </summary>
+            <!-- a photo of the school's own signage, same idea as the
                building photo on the Grade 10 report card above -->
-          <figure class="school-figure">
-            <img class="school-photo" src="assets/images/eclaro-photo.jpg" alt="Eclaro Academy signage" />
-            <figcaption>Eclaro Academy, Inc.: Grade 11 and Grade 12.</figcaption>
-          </figure>
-          <table>
-            <caption>1st Semester Final Grades</caption>
-            <thead><tr><th scope="col">Subject</th><th scope="col">1st Qtr</th><th scope="col">2nd Qtr</th><th scope="col">Final</th></tr></thead>
-            <tbody>
-              <tr class="group-row"><th colspan="4">Core</th></tr>
-              <tr><th scope="row">Oral Communication in Context</th><td>96</td><td>97</td><td class="final">97</td></tr>
-              <tr><th scope="row">Komunikasyon at Pananaliksik sa Wika at Kulturang Pilipino</th><td>94</td><td>96</td><td class="final">95</td></tr>
-              <tr><th scope="row">General Mathematics</th><td>93</td><td>95</td><td class="final">94</td></tr>
-              <tr><th scope="row">Earth Science</th><td>91</td><td>94</td><td class="final">93</td></tr>
-              <tr><th scope="row">Personal Development</th><td>92</td><td>94</td><td class="final">93</td></tr>
-              <tr><th scope="row">Introduction to the Philosophy of the Human Person</th><td>89</td><td>94</td><td class="final">92</td></tr>
-              <tr><th scope="row">Physical Education and Health I</th><td>96</td><td>97</td><td class="final">97</td></tr>
-              <tr class="group-row"><th colspan="4">Applied &amp; Specialized</th></tr>
-              <tr><th scope="row">General Biology I</th><td>82</td><td>91</td><td class="final">87</td></tr>
-              <tr><th scope="row">Pre-Calculus</th><td>90</td><td>94</td><td class="final">92</td></tr>
-            </tbody>
-            <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>93</td></tr></tfoot>
-          </table>
-          <table>
-            <caption>2nd Semester Final Grades</caption>
-            <thead><tr><th scope="col">Subject</th><th scope="col">3rd Qtr</th><th scope="col">4th Qtr</th><th scope="col">Final</th></tr></thead>
-            <tbody>
-              <tr class="group-row"><th colspan="4">Core</th></tr>
-              <tr><th scope="row">Reading and Writing</th><td>95</td><td>95</td><td class="final">95</td></tr>
-              <tr><th scope="row">Pagbasa at Pagsusuri ng Iba't-Ibang Teksto tungo sa Pananaliksik</th><td>94</td><td>94</td><td class="final">94</td></tr>
-              <tr><th scope="row">Statistics and Probability</th><td>94</td><td>83</td><td class="final">89</td></tr>
-              <tr><th scope="row">Contemporary Philippine Arts from the Region</th><td>91</td><td>95</td><td class="final">93</td></tr>
-              <tr><th scope="row">Physical Education and Health II</th><td>97</td><td>98</td><td class="final">98</td></tr>
-              <tr class="group-row"><th colspan="4">Applied &amp; Specialized</th></tr>
-              <tr><th scope="row">Empowerment Technologies</th><td>94</td><td>94</td><td class="final">94</td></tr>
-              <tr><th scope="row">Research 1</th><td>94</td><td>94</td><td class="final">94</td></tr>
-              <tr><th scope="row">General Physics I</th><td>94</td><td>97</td><td class="final">96</td></tr>
-              <tr><th scope="row">General Chemistry I</th><td>96</td><td>96</td><td class="final">96</td></tr>
-            </tbody>
-            <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>94</td></tr></tfoot>
-          </table>
-        </details>
+            <figure class="school-figure">
+              <img
+                class="school-photo"
+                src="assets/images/eclaro-photo.jpg"
+                alt="Eclaro Academy signage"
+              />
+              <figcaption>
+                Eclaro Academy, Inc.: Grade 11 and Grade 12.
+              </figcaption>
+            </figure>
+            <table>
+              <caption>
+                1st Semester Final Grades
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Subject</th>
+                  <th scope="col">1st Qtr</th>
+                  <th scope="col">2nd Qtr</th>
+                  <th scope="col">Final</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row">
+                  <th colspan="4">Core</th>
+                </tr>
+                <tr>
+                  <th scope="row">Oral Communication in Context</th>
+                  <td>96</td>
+                  <td>97</td>
+                  <td class="final">97</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Komunikasyon at Pananaliksik sa Wika at Kulturang Pilipino
+                  </th>
+                  <td>94</td>
+                  <td>96</td>
+                  <td class="final">95</td>
+                </tr>
+                <tr>
+                  <th scope="row">General Mathematics</th>
+                  <td>93</td>
+                  <td>95</td>
+                  <td class="final">94</td>
+                </tr>
+                <tr>
+                  <th scope="row">Earth Science</th>
+                  <td>91</td>
+                  <td>94</td>
+                  <td class="final">93</td>
+                </tr>
+                <tr>
+                  <th scope="row">Personal Development</th>
+                  <td>92</td>
+                  <td>94</td>
+                  <td class="final">93</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Introduction to the Philosophy of the Human Person
+                  </th>
+                  <td>89</td>
+                  <td>94</td>
+                  <td class="final">92</td>
+                </tr>
+                <tr>
+                  <th scope="row">Physical Education and Health I</th>
+                  <td>96</td>
+                  <td>97</td>
+                  <td class="final">97</td>
+                </tr>
+                <tr class="group-row">
+                  <th colspan="4">Applied &amp; Specialized</th>
+                </tr>
+                <tr>
+                  <th scope="row">General Biology I</th>
+                  <td>82</td>
+                  <td>91</td>
+                  <td class="final">87</td>
+                </tr>
+                <tr>
+                  <th scope="row">Pre-Calculus</th>
+                  <td>90</td>
+                  <td>94</td>
+                  <td class="final">92</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>General Average for the Semester</td>
+                  <td></td>
+                  <td></td>
+                  <td>93</td>
+                </tr>
+              </tfoot>
+            </table>
+            <table>
+              <caption>
+                2nd Semester Final Grades
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Subject</th>
+                  <th scope="col">3rd Qtr</th>
+                  <th scope="col">4th Qtr</th>
+                  <th scope="col">Final</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row">
+                  <th colspan="4">Core</th>
+                </tr>
+                <tr>
+                  <th scope="row">Reading and Writing</th>
+                  <td>95</td>
+                  <td>95</td>
+                  <td class="final">95</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Pagbasa at Pagsusuri ng Iba't-Ibang Teksto tungo sa
+                    Pananaliksik
+                  </th>
+                  <td>94</td>
+                  <td>94</td>
+                  <td class="final">94</td>
+                </tr>
+                <tr>
+                  <th scope="row">Statistics and Probability</th>
+                  <td>94</td>
+                  <td>83</td>
+                  <td class="final">89</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Contemporary Philippine Arts from the Region
+                  </th>
+                  <td>91</td>
+                  <td>95</td>
+                  <td class="final">93</td>
+                </tr>
+                <tr>
+                  <th scope="row">Physical Education and Health II</th>
+                  <td>97</td>
+                  <td>98</td>
+                  <td class="final">98</td>
+                </tr>
+                <tr class="group-row">
+                  <th colspan="4">Applied &amp; Specialized</th>
+                </tr>
+                <tr>
+                  <th scope="row">Empowerment Technologies</th>
+                  <td>94</td>
+                  <td>94</td>
+                  <td class="final">94</td>
+                </tr>
+                <tr>
+                  <th scope="row">Research 1</th>
+                  <td>94</td>
+                  <td>94</td>
+                  <td class="final">94</td>
+                </tr>
+                <tr>
+                  <th scope="row">General Physics I</th>
+                  <td>94</td>
+                  <td>97</td>
+                  <td class="final">96</td>
+                </tr>
+                <tr>
+                  <th scope="row">General Chemistry I</th>
+                  <td>96</td>
+                  <td>96</td>
+                  <td class="final">96</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>General Average for the Semester</td>
+                  <td></td>
+                  <td></td>
+                  <td>94</td>
+                </tr>
+              </tfoot>
+            </table>
+          </details>
 
-        <!-- Grade 12 -->
-        <details class="report-box">
-          <summary>Grade 12 &middot; Eclaro Academy, Inc. (GWA 95, High Honors)</summary>
-          <table>
-            <caption>1st Semester Final Grades</caption>
-            <thead><tr><th scope="col">Subject</th><th scope="col">1st Qtr</th><th scope="col">2nd Qtr</th><th scope="col">Final</th></tr></thead>
-            <tbody>
-              <tr class="group-row"><th colspan="4">Core</th></tr>
-              <tr><th scope="row">21st Century Literature from Philippines and World</th><td>97</td><td>98</td><td class="final">98</td></tr>
-              <tr><th scope="row">Media and Information Literacy</th><td>91</td><td>91</td><td class="final">91</td></tr>
-              <tr><th scope="row">General Physics II</th><td>90</td><td>92</td><td class="final">91</td></tr>
-              <tr><th scope="row">Physical Education III</th><td>98</td><td>98</td><td class="final">98</td></tr>
-              <tr class="group-row"><th colspan="4">Applied &amp; Specialized</th></tr>
-              <tr><th scope="row">Research 2</th><td>95</td><td>98</td><td class="final">97</td></tr>
-              <tr><th scope="row">Pagsulat sa Filipino sa Larangan ng Tech-Voc</th><td>95</td><td>95</td><td class="final">95</td></tr>
-              <tr><th scope="row">Entrepreneurship</th><td>94</td><td>95</td><td class="final">95</td></tr>
-              <tr><th scope="row">General Chemistry II</th><td>83</td><td>83</td><td class="final">83</td></tr>
-              <tr><th scope="row">Disaster Risk Reduction and Management</th><td>94</td><td>96</td><td class="final">95</td></tr>
-            </tbody>
-            <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>94</td></tr></tfoot>
-          </table>
-          <table>
-            <caption>2nd Semester Final Grades</caption>
-            <thead><tr><th scope="col">Subject</th><th scope="col">3rd Qtr</th><th scope="col">4th Qtr</th><th scope="col">Final</th></tr></thead>
-            <tbody>
-              <tr class="group-row"><th colspan="4">Core</th></tr>
-              <tr><th scope="row">Understanding Culture, Society and Politics</th><td>95</td><td>96</td><td class="final">96</td></tr>
-              <tr><th scope="row">Physical Education IV</th><td>98</td><td>98</td><td class="final">98</td></tr>
-              <tr class="group-row"><th colspan="4">Applied</th></tr>
-              <tr><th scope="row">English for Academic and Professional Purposes</th><td>98</td><td>98</td><td class="final">98</td></tr>
-              <tr><th scope="row">Inquiries, Investigation &amp; Immersion</th><td>96</td><td>97</td><td class="final">97</td></tr>
-              <tr class="group-row"><th colspan="4">Specialized</th></tr>
-              <tr><th scope="row">General Biology II</th><td>98</td><td>97</td><td class="final">98</td></tr>
-              <tr><th scope="row">Basic Calculus</th><td>91</td><td>94</td><td class="final">93</td></tr>
-              <tr><th scope="row">Work Immersion</th><td>96</td><td>97</td><td class="final">97</td></tr>
-            </tbody>
-            <tfoot><tr><td>General Average for the Semester</td><td></td><td></td><td>97</td></tr></tfoot>
-          </table>
-        </details>
-      </div>
-    </section>
+          <!-- Grade 12 -->
+          <details class="report-box">
+            <summary>
+              Grade 12 &middot; Eclaro Academy, Inc. (GWA 95, High Honors)
+            </summary>
+            <table>
+              <caption>
+                1st Semester Final Grades
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Subject</th>
+                  <th scope="col">1st Qtr</th>
+                  <th scope="col">2nd Qtr</th>
+                  <th scope="col">Final</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row">
+                  <th colspan="4">Core</th>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    21st Century Literature from Philippines and World
+                  </th>
+                  <td>97</td>
+                  <td>98</td>
+                  <td class="final">98</td>
+                </tr>
+                <tr>
+                  <th scope="row">Media and Information Literacy</th>
+                  <td>91</td>
+                  <td>91</td>
+                  <td class="final">91</td>
+                </tr>
+                <tr>
+                  <th scope="row">General Physics II</th>
+                  <td>90</td>
+                  <td>92</td>
+                  <td class="final">91</td>
+                </tr>
+                <tr>
+                  <th scope="row">Physical Education III</th>
+                  <td>98</td>
+                  <td>98</td>
+                  <td class="final">98</td>
+                </tr>
+                <tr class="group-row">
+                  <th colspan="4">Applied &amp; Specialized</th>
+                </tr>
+                <tr>
+                  <th scope="row">Research 2</th>
+                  <td>95</td>
+                  <td>98</td>
+                  <td class="final">97</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Pagsulat sa Filipino sa Larangan ng Tech-Voc
+                  </th>
+                  <td>95</td>
+                  <td>95</td>
+                  <td class="final">95</td>
+                </tr>
+                <tr>
+                  <th scope="row">Entrepreneurship</th>
+                  <td>94</td>
+                  <td>95</td>
+                  <td class="final">95</td>
+                </tr>
+                <tr>
+                  <th scope="row">General Chemistry II</th>
+                  <td>83</td>
+                  <td>83</td>
+                  <td class="final">83</td>
+                </tr>
+                <tr>
+                  <th scope="row">Disaster Risk Reduction and Management</th>
+                  <td>94</td>
+                  <td>96</td>
+                  <td class="final">95</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>General Average for the Semester</td>
+                  <td></td>
+                  <td></td>
+                  <td>94</td>
+                </tr>
+              </tfoot>
+            </table>
+            <table>
+              <caption>
+                2nd Semester Final Grades
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Subject</th>
+                  <th scope="col">3rd Qtr</th>
+                  <th scope="col">4th Qtr</th>
+                  <th scope="col">Final</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-row">
+                  <th colspan="4">Core</th>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    Understanding Culture, Society and Politics
+                  </th>
+                  <td>95</td>
+                  <td>96</td>
+                  <td class="final">96</td>
+                </tr>
+                <tr>
+                  <th scope="row">Physical Education IV</th>
+                  <td>98</td>
+                  <td>98</td>
+                  <td class="final">98</td>
+                </tr>
+                <tr class="group-row">
+                  <th colspan="4">Applied</th>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    English for Academic and Professional Purposes
+                  </th>
+                  <td>98</td>
+                  <td>98</td>
+                  <td class="final">98</td>
+                </tr>
+                <tr>
+                  <th scope="row">Inquiries, Investigation &amp; Immersion</th>
+                  <td>96</td>
+                  <td>97</td>
+                  <td class="final">97</td>
+                </tr>
+                <tr class="group-row">
+                  <th colspan="4">Specialized</th>
+                </tr>
+                <tr>
+                  <th scope="row">General Biology II</th>
+                  <td>98</td>
+                  <td>97</td>
+                  <td class="final">98</td>
+                </tr>
+                <tr>
+                  <th scope="row">Basic Calculus</th>
+                  <td>91</td>
+                  <td>94</td>
+                  <td class="final">93</td>
+                </tr>
+                <tr>
+                  <th scope="row">Work Immersion</th>
+                  <td>96</td>
+                  <td>97</td>
+                  <td class="final">97</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>General Average for the Semester</td>
+                  <td></td>
+                  <td></td>
+                  <td>97</td>
+                </tr>
+              </tfoot>
+            </table>
+          </details>
+        </div>
+      </section>
 
-    <!-- ===== INTERESTS — hobbies and the games I'm currently
+      <!-- ===== INTERESTS — hobbies and the games I'm currently
          playing. This used to live inside About Me, but I moved it
          down here so the page reads formal-info-first: who I am,
          then my academics, then the more casual stuff. Both lists
          are plain bullet points on purpose, nothing fancier. ===== -->
-    <section id="interests">
-      <div class="wrap">
-        <span class="eyebrow">Personal Interests</span>
-        <h2>Hobbies &amp; Games</h2>
-        <p class="lede">What I actually spend my free time on. Tap a hobby to open it.</p>
+      <section id="interests">
+        <div class="wrap">
+          <span class="eyebrow">Personal Interests</span>
+          <h2>Hobbies &amp; Games</h2>
+          <p class="lede">
+            What I actually spend my free time on. Tap a hobby to open it.
+          </p>
 
-        <h3 class="mini-title">Hobbies</h3>
-        <!-- each hobby is now its own <details> box, same show/hide
+          <h3 class="mini-title">Hobbies</h3>
+          <!-- each hobby is now its own <details> box, same show/hide
              pattern as my grade reports in Academics — no JavaScript,
              the browser handles open/close on its own. Inside each
              one I used a <dl> (description list) instead of a plain
              <ul>, since the content is actual term/description pairs
              (a game's name + what it is), which is exactly what
              <dt>/<dd> exists for. -->
-        <details class="report-box">
-          <summary>🎮 Gaming</summary>
-          <!-- my old standalone "Currently Playing" list now lives
+          <details class="report-box">
+            <summary>🎮 Gaming</summary>
+            <!-- my old standalone "Currently Playing" list now lives
                here instead of its own section. Each title links out
                to its own official site rather than using the
                publisher's logo art — that art is copyrighted
                promotional material, not something I made or have
                the rights to host. -->
-          <dl class="dl-list">
-            <dt><a href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener">Wuthering Waves</a></dt>
-            <dd>Open-world action RPG, by Kuro Games.</dd>
-            <dt><a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact</a></dt>
-            <dd>Open-world gacha RPG, by HoYoverse.</dd>
-            <dt><a href="https://www.arknights.global/" target="_blank" rel="noopener">Arknights</a></dt>
-            <dd>Tower-defense gacha strategy, by Hypergryph.</dd>
-            <dt><a href="https://nte.perfectworld.com/" target="_blank" rel="noopener">Neverness to Everness</a></dt>
-            <dd>Open-world urban fantasy RPG, by Perfect World.</dd>
-            <dt><a href="https://duetnightabyss.dna-panstudio.com/en" target="_blank" rel="noopener">Duet Night Abyss</a></dt>
-            <dd>Action RPG, by NetEase.</dd>
-            <dt><a href="https://callofdragons.farlightgames.com/" target="_blank" rel="noopener">Call of Dragons</a></dt>
-            <dd>Strategy / RTS, by Farlight Games.</dd>
-            <dt><a href="https://www.wherewindsmeetgame.com/m/" target="_blank" rel="noopener">Where Winds Meet</a></dt>
-            <dd>Open-world wuxia action RPG, by Everstone Studio.</dd>
-            <dt><a href="https://m.mobilelegends.com/" target="_blank" rel="noopener">Mobile Legends: Bang Bang</a></dt>
-            <dd>5v5 MOBA, by Moonton.</dd>
-            <dt><a href="https://www.callofduty.com/mobile" target="_blank" rel="noopener">Call of Duty: Mobile</a></dt>
-            <dd>FPS, by Activision.</dd>
-            <dt><a href="https://www.minecraft.net/" target="_blank" rel="noopener">Minecraft</a></dt>
-            <dd>Sandbox survival &amp; building, by Mojang.</dd>
-            <dt><a href="https://www.roblox.com/" target="_blank" rel="noopener">Roblox</a></dt>
-            <dd>User-generated game platform, by Roblox Corp.</dd>
-          </dl>
+            <dl class="dl-list">
+              <dt>
+                <a
+                  href="https://wutheringwaves.kurogames.com/en/"
+                  target="_blank"
+                  rel="noopener"
+                  >Wuthering Waves</a
+                >
+              </dt>
+              <dd>Open-world action RPG, by Kuro Games.</dd>
+              <dt>
+                <a
+                  href="https://genshin.hoyoverse.com/en/"
+                  target="_blank"
+                  rel="noopener"
+                  >Genshin Impact</a
+                >
+              </dt>
+              <dd>Open-world gacha RPG, by HoYoverse.</dd>
+              <dt>
+                <a
+                  href="https://www.arknights.global/"
+                  target="_blank"
+                  rel="noopener"
+                  >Arknights</a
+                >
+              </dt>
+              <dd>Tower-defense gacha strategy, by Hypergryph.</dd>
+              <dt>
+                <a
+                  href="https://nte.perfectworld.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >Neverness to Everness</a
+                >
+              </dt>
+              <dd>Open-world urban fantasy RPG, by Perfect World.</dd>
+              <dt>
+                <a
+                  href="https://duetnightabyss.dna-panstudio.com/en"
+                  target="_blank"
+                  rel="noopener"
+                  >Duet Night Abyss</a
+                >
+              </dt>
+              <dd>Action RPG, by NetEase.</dd>
+              <dt>
+                <a
+                  href="https://callofdragons.farlightgames.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >Call of Dragons</a
+                >
+              </dt>
+              <dd>Strategy / RTS, by Farlight Games.</dd>
+              <dt>
+                <a
+                  href="https://www.wherewindsmeetgame.com/m/"
+                  target="_blank"
+                  rel="noopener"
+                  >Where Winds Meet</a
+                >
+              </dt>
+              <dd>Open-world wuxia action RPG, by Everstone Studio.</dd>
+              <dt>
+                <a
+                  href="https://m.mobilelegends.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >Mobile Legends: Bang Bang</a
+                >
+              </dt>
+              <dd>5v5 MOBA, by Moonton.</dd>
+              <dt>
+                <a
+                  href="https://www.callofduty.com/mobile"
+                  target="_blank"
+                  rel="noopener"
+                  >Call of Duty: Mobile</a
+                >
+              </dt>
+              <dd>FPS, by Activision.</dd>
+              <dt>
+                <a
+                  href="https://www.minecraft.net/"
+                  target="_blank"
+                  rel="noopener"
+                  >Minecraft</a
+                >
+              </dt>
+              <dd>Sandbox survival &amp; building, by Mojang.</dd>
+              <dt>
+                <a href="https://www.roblox.com/" target="_blank" rel="noopener"
+                  >Roblox</a
+                >
+              </dt>
+              <dd>User-generated game platform, by Roblox Corp.</dd>
+            </dl>
 
-          <h4>Genres I Enjoy</h4>
-          <!-- games I've actually played across genres, separate
+            <h4>Genres I Enjoy</h4>
+            <!-- games I've actually played across genres, separate
                from the currently-playing list above -->
-          <dl class="dl-list">
-            <dt>Action-RPG</dt>
-            <dd>Elden Ring, Diablo IV.</dd>
-            <dt>Open World</dt>
-            <dd>GTA V, Red Dead Redemption 2.</dd>
-            <dt>MMORPG</dt>
-            <dd>World of Warcraft, Final Fantasy XIV.</dd>
-            <dt>Gacha</dt>
-            <dd>Genshin Impact, Wuthering Waves.</dd>
-            <dt>Battle Royale</dt>
-            <dd>Fortnite, PUBG.</dd>
-            <dt>Sandbox</dt>
-            <dd>Minecraft, Terraria.</dd>
-          </dl>
-        </details>
+            <dl class="dl-list">
+              <dt>Action-RPG</dt>
+              <dd>Elden Ring, Diablo IV.</dd>
+              <dt>Open World</dt>
+              <dd>GTA V, Red Dead Redemption 2.</dd>
+              <dt>MMORPG</dt>
+              <dd>World of Warcraft, Final Fantasy XIV.</dd>
+              <dt>Gacha</dt>
+              <dd>Genshin Impact, Wuthering Waves.</dd>
+              <dt>Battle Royale</dt>
+              <dd>Fortnite, PUBG.</dd>
+              <dt>Sandbox</dt>
+              <dd>Minecraft, Terraria.</dd>
+            </dl>
+          </details>
 
-        <details class="report-box">
-          <summary>🎬 Anime &amp; Movies</summary>
-          <!-- these two are my only real favorite-movie picks on the
+          <details class="report-box">
+            <summary>🎬 Anime &amp; Movies</summary>
+            <!-- these two are my only real favorite-movie picks on the
                whole page — removed the trailer embeds I used to have
                in a separate Media section, so this list is the only
                place they live now -->
-          <h4>My Two Favorites</h4>
-          <dl class="dl-list">
-            <dt>The Wild Robot</dt>
-            <dd>Favorite movie.</dd>
-            <dt>Flow</dt>
-            <dd>Favorite movie.</dd>
-          </dl>
+            <h4>My Two Favorites</h4>
+            <dl class="dl-list">
+              <dt>The Wild Robot</dt>
+              <dd>Favorite movie.</dd>
+              <dt>Flow</dt>
+              <dd>Favorite movie.</dd>
+            </dl>
 
-          <h4>Movie Genres I've Watched</h4>
-          <dl class="dl-list">
-            <dt>Action</dt>
-            <dd>Mad Max: Fury Road, John Wick.</dd>
-            <dt>Sci-Fi</dt>
-            <dd>Blade Runner, Interstellar.</dd>
-            <dt>Fantasy</dt>
-            <dd>The Lord of the Rings, Pan's Labyrinth.</dd>
-            <dt>Thriller</dt>
-            <dd>Se7en, Gone Girl.</dd>
-            <dt>Animation</dt>
-            <dd>Spider-Man: Into the Spider-Verse, Spirited Away.</dd>
-            <dt>Superhero</dt>
-            <dd>The Dark Knight, Avengers: Endgame.</dd>
-          </dl>
+            <h4>Movie Genres I've Watched</h4>
+            <dl class="dl-list">
+              <dt>Action</dt>
+              <dd>Mad Max: Fury Road, John Wick.</dd>
+              <dt>Sci-Fi</dt>
+              <dd>Blade Runner, Interstellar.</dd>
+              <dt>Fantasy</dt>
+              <dd>The Lord of the Rings, Pan's Labyrinth.</dd>
+              <dt>Thriller</dt>
+              <dd>Se7en, Gone Girl.</dd>
+              <dt>Animation</dt>
+              <dd>Spider-Man: Into the Spider-Verse, Spirited Away.</dd>
+              <dt>Superhero</dt>
+              <dd>The Dark Knight, Avengers: Endgame.</dd>
+            </dl>
 
-          <h4>Anime Genres I've Watched</h4>
-          <dl class="dl-list">
-            <dt>Shonen</dt>
-            <dd>Naruto, My Hero Academia.</dd>
-            <dt>Isekai</dt>
-            <dd>Re:Zero, That Time I Got Reincarnated as a Slime.</dd>
-            <dt>Psychological</dt>
-            <dd>Death Note, Paranoia Agent.</dd>
-            <dt>Supernatural</dt>
-            <dd>Jujutsu Kaisen, Mob Psycho 100.</dd>
-            <dt>Fantasy</dt>
-            <dd>Frieren, Made in Abyss.</dd>
-            <dt>Action</dt>
-            <dd>Demon Slayer, Chainsaw Man.</dd>
-          </dl>
-        </details>
+            <h4>Anime Genres I've Watched</h4>
+            <dl class="dl-list">
+              <dt>Shonen</dt>
+              <dd>Naruto, My Hero Academia.</dd>
+              <dt>Isekai</dt>
+              <dd>Re:Zero, That Time I Got Reincarnated as a Slime.</dd>
+              <dt>Psychological</dt>
+              <dd>Death Note, Paranoia Agent.</dd>
+              <dt>Supernatural</dt>
+              <dd>Jujutsu Kaisen, Mob Psycho 100.</dd>
+              <dt>Fantasy</dt>
+              <dd>Frieren, Made in Abyss.</dd>
+              <dt>Action</dt>
+              <dd>Demon Slayer, Chainsaw Man.</dd>
+            </dl>
+          </details>
 
-        <details class="report-box">
-          <summary>📚 Reading</summary>
-          <h4>Book &amp; Novel Genres I've Read</h4>
-          <dl class="dl-list">
-            <dt>Fantasy</dt>
-            <dd>Mistborn (Brandon Sanderson), The Name of the Wind.</dd>
-            <dt>Sci-Fi</dt>
-            <dd>Dune, The Three-Body Problem.</dd>
-            <dt>Mystery</dt>
-            <dd>The Silent Patient, And Then There Were None.</dd>
-            <dt>Thriller</dt>
-            <dd>Gone Girl, The Girl with the Dragon Tattoo.</dd>
-            <dt>Dystopian</dt>
-            <dd>1984, Brave New World.</dd>
-            <dt>Historical Fiction</dt>
-            <dd>All the Light We Cannot See, The Book Thief.</dd>
-          </dl>
+          <details class="report-box">
+            <summary>📚 Reading</summary>
+            <h4>Book &amp; Novel Genres I've Read</h4>
+            <dl class="dl-list">
+              <dt>Fantasy</dt>
+              <dd>Mistborn (Brandon Sanderson), The Name of the Wind.</dd>
+              <dt>Sci-Fi</dt>
+              <dd>Dune, The Three-Body Problem.</dd>
+              <dt>Mystery</dt>
+              <dd>The Silent Patient, And Then There Were None.</dd>
+              <dt>Thriller</dt>
+              <dd>Gone Girl, The Girl with the Dragon Tattoo.</dd>
+              <dt>Dystopian</dt>
+              <dd>1984, Brave New World.</dd>
+              <dt>Historical Fiction</dt>
+              <dd>All the Light We Cannot See, The Book Thief.</dd>
+            </dl>
 
-          <h4>Light Novel Genres I've Read</h4>
-          <dl class="dl-list">
-            <dt>Isekai</dt>
-            <dd>Re:Zero, Mushoku Tensei.</dd>
-            <dt>Fantasy</dt>
-            <dd>Overlord, The Rising of the Shield Hero.</dd>
-            <dt>Dark Fantasy</dt>
-            <dd>Goblin Slayer, Re:Zero.</dd>
-            <dt>Sci-Fi</dt>
-            <dd>Sword Art Online, Steins;Gate.</dd>
-            <dt>School Life</dt>
-            <dd>Classroom of the Elite, Oregairu.</dd>
-            <dt>Mystery</dt>
-            <dd>Hyouka, The Melancholy of Haruhi Suzumiya.</dd>
-          </dl>
+            <h4>Light Novel Genres I've Read</h4>
+            <dl class="dl-list">
+              <dt>Isekai</dt>
+              <dd>Re:Zero, Mushoku Tensei.</dd>
+              <dt>Fantasy</dt>
+              <dd>Overlord, The Rising of the Shield Hero.</dd>
+              <dt>Dark Fantasy</dt>
+              <dd>Goblin Slayer, Re:Zero.</dd>
+              <dt>Sci-Fi</dt>
+              <dd>Sword Art Online, Steins;Gate.</dd>
+              <dt>School Life</dt>
+              <dd>Classroom of the Elite, Oregairu.</dd>
+              <dt>Mystery</dt>
+              <dd>Hyouka, The Melancholy of Haruhi Suzumiya.</dd>
+            </dl>
 
-          <h4>Manga Genres I've Read</h4>
-          <dl class="dl-list">
-            <dt>Shonen</dt>
-            <dd>One Piece, Jujutsu Kaisen.</dd>
-            <dt>Seinen</dt>
-            <dd>Berserk, Vinland Saga.</dd>
-            <dt>Isekai</dt>
-            <dd>That Time I Got Reincarnated as a Slime, Mushoku Tensei.</dd>
-            <dt>Psychological</dt>
-            <dd>Death Note, Oyasumi Punpun.</dd>
-            <dt>Fantasy</dt>
-            <dd>Frieren: Beyond Journey's End, Fullmetal Alchemist.</dd>
-            <dt>Action</dt>
-            <dd>Chainsaw Man, Attack on Titan.</dd>
-          </dl>
+            <h4>Manga Genres I've Read</h4>
+            <dl class="dl-list">
+              <dt>Shonen</dt>
+              <dd>One Piece, Jujutsu Kaisen.</dd>
+              <dt>Seinen</dt>
+              <dd>Berserk, Vinland Saga.</dd>
+              <dt>Isekai</dt>
+              <dd>That Time I Got Reincarnated as a Slime, Mushoku Tensei.</dd>
+              <dt>Psychological</dt>
+              <dd>Death Note, Oyasumi Punpun.</dd>
+              <dt>Fantasy</dt>
+              <dd>Frieren: Beyond Journey's End, Fullmetal Alchemist.</dd>
+              <dt>Action</dt>
+              <dd>Chainsaw Man, Attack on Titan.</dd>
+            </dl>
 
-          <h4>Manhwa Genres I've Read</h4>
-          <dl class="dl-list">
-            <dt>Regression</dt>
-            <dd>Solo Leveling, Reincarnator.</dd>
-            <dt>System / Levelling</dt>
-            <dd>Solo Leveling, Omniscient Reader's Viewpoint.</dd>
-            <dt>Fantasy</dt>
-            <dd>Tower of God, Omniscient Reader's Viewpoint.</dd>
-            <dt>Action</dt>
-            <dd>The God of High School, Bastard.</dd>
-            <dt>Romance Fantasy</dt>
-            <dd>The Remarried Empress, Who Made Me a Princess.</dd>
-            <dt>Villainess</dt>
-            <dd>The Reason I Became a Villainess Novel, I'm the Villain's Mother.</dd>
-          </dl>
-        </details>
+            <h4>Manhwa Genres I've Read</h4>
+            <dl class="dl-list">
+              <dt>Regression</dt>
+              <dd>Solo Leveling, Reincarnator.</dd>
+              <dt>System / Levelling</dt>
+              <dd>Solo Leveling, Omniscient Reader's Viewpoint.</dd>
+              <dt>Fantasy</dt>
+              <dd>Tower of God, Omniscient Reader's Viewpoint.</dd>
+              <dt>Action</dt>
+              <dd>The God of High School, Bastard.</dd>
+              <dt>Romance Fantasy</dt>
+              <dd>The Remarried Empress, Who Made Me a Princess.</dd>
+              <dt>Villainess</dt>
+              <dd>
+                The Reason I Became a Villainess Novel, I'm the Villain's
+                Mother.
+              </dd>
+            </dl>
+          </details>
 
-        <details class="report-box">
-          <summary>🎧 Music</summary>
-          <!-- artists I've actually listened to, sorted by genre —
+          <details class="report-box">
+            <summary>🎧 Music</summary>
+            <!-- artists I've actually listened to, sorted by genre —
                not favorites, just what I've listened to across
                different styles -->
-          <h4>Artists I've Listened To</h4>
-          <dl class="dl-list">
-            <dt>Pop</dt>
-            <dd>Taylor Swift, Dua Lipa.</dd>
-            <dt>Rock</dt>
-            <dd>Foo Fighters, Arctic Monkeys.</dd>
-            <dt>R&amp;B</dt>
-            <dd>SZA, The Weeknd.</dd>
-            <dt>Electronic / EDM</dt>
-            <dd>Daft Punk, Skrillex.</dd>
-            <dt>Indie</dt>
-            <dd>Tame Impala, Clairo.</dd>
-            <dt>Lo-fi</dt>
-            <dd>Nujabes, jinsang.</dd>
-          </dl>
-        </details>
+            <h4>Artists I've Listened To</h4>
+            <dl class="dl-list">
+              <dt>Pop</dt>
+              <dd>Taylor Swift, Dua Lipa.</dd>
+              <dt>Rock</dt>
+              <dd>Foo Fighters, Arctic Monkeys.</dd>
+              <dt>R&amp;B</dt>
+              <dd>SZA, The Weeknd.</dd>
+              <dt>Electronic / EDM</dt>
+              <dd>Daft Punk, Skrillex.</dd>
+              <dt>Indie</dt>
+              <dd>Tame Impala, Clairo.</dd>
+              <dt>Lo-fi</dt>
+              <dd>Nujabes, jinsang.</dd>
+            </dl>
+          </details>
 
-        <details class="report-box">
-          <summary>💡 Learning New Tech</summary>
-          <p class="placeholder-note">Whatever I'm picking up outside of coursework at the moment. Right now that's mostly just going deeper on HTML/CSS through this activity itself.</p>
-        </details>
-      </div>
-    </section>
+          <details class="report-box">
+            <summary>💡 Learning New Tech</summary>
+            <p class="placeholder-note">
+              Whatever I'm picking up outside of coursework at the moment. Right
+              now that's mostly just going deeper on HTML/CSS through this
+              activity itself.
+            </p>
+          </details>
+        </div>
+      </section>
 
+      <!-- ===== CONNECT — a contact form and my direct links ===== -->
+      <section id="connect">
+        <div class="wrap">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>Connect</h2>
+          <p class="lede">
+            Fill out the short form, or just use one of the links directly.
+          </p>
 
-    <!-- ===== CONNECT — a contact form and my direct links ===== -->
-    <section id="connect">
-      <div class="wrap">
-        <span class="eyebrow">Get In Touch</span>
-        <h2>Connect</h2>
-        <p class="lede">Fill out the short form, or just use one of the links directly.</p>
-
-        <div class="connect-grid">
-          <!-- this page has no server, so I used action="mailto:..."
+          <div class="connect-grid">
+            <!-- this page has no server, so I used action="mailto:..."
                instead. Clicking "Send" just opens the visitor's own
                email app with these fields already filled in — that
                is the most a plain HTML form can do without a backend -->
-          <form class="contact-form" action="mailto:galaridokarlian7@gmail.com" method="post" enctype="text/plain">
-            <div class="form-row">
-              <label for="visitor-name">Your Name</label>
-              <input type="text" id="visitor-name" name="Name" required />
-            </div>
-            <div class="form-row">
-              <label for="visitor-email">Your Email</label>
-              <!-- type="email" makes the browser check that this
+            <form
+              class="contact-form"
+              action="mailto:galaridokarlian7@gmail.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <div class="form-row">
+                <label for="visitor-name">Your Name</label>
+                <input type="text" id="visitor-name" name="Name" required />
+              </div>
+              <div class="form-row">
+                <label for="visitor-email">Your Email</label>
+                <!-- type="email" makes the browser check that this
                    looks like a real email address before it submits -->
-              <input type="email" id="visitor-email" name="Email" required />
-            </div>
-            <div class="form-row">
-              <label for="visitor-site">Your Website (optional)</label>
-              <!-- type="url" is the same idea as type="email" — the
+                <input type="email" id="visitor-email" name="Email" required />
+              </div>
+              <div class="form-row">
+                <label for="visitor-site">Your Website (optional)</label>
+                <!-- type="url" is the same idea as type="email" — the
                    browser checks this looks like a real web address
                    before letting the form submit -->
-              <input type="url" id="visitor-site" name="Website" placeholder="https://..." />
-            </div>
-            <div class="form-row">
-              <label for="visitor-phone">Your Phone (optional)</label>
-              <!-- type="tel" does not format-check the way
+                <input
+                  type="url"
+                  id="visitor-site"
+                  name="Website"
+                  placeholder="https://..."
+                />
+              </div>
+              <div class="form-row">
+                <label for="visitor-phone">Your Phone (optional)</label>
+                <!-- type="tel" does not format-check the way
                    email/url do — phone formats vary too much
                    country to country for the browser to guess — but
                    it still tells phones to show a numeric keypad
                    instead of a full keyboard -->
-              <input type="tel" id="visitor-phone" name="Phone" placeholder="09XX XXX XXXX" />
-            </div>
-            <div class="form-row">
-              <label for="visitor-how">How Do You Know Me?</label>
-              <select id="visitor-how" name="How we know each other">
-                <option value="Classmate">Classmate</option>
-                <option value="Org-mate">Org-mate</option>
-                <option value="Online">Met online</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <!-- <fieldset> + <legend> is the correct pair of tags for
+                <input
+                  type="tel"
+                  id="visitor-phone"
+                  name="Phone"
+                  placeholder="09XX XXX XXXX"
+                />
+              </div>
+              <div class="form-row">
+                <label for="visitor-how">How Do You Know Me?</label>
+                <select id="visitor-how" name="How we know each other">
+                  <option value="Classmate">Classmate</option>
+                  <option value="Org-mate">Org-mate</option>
+                  <option value="Online">Met online</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <!-- <fieldset> + <legend> is the correct pair of tags for
                  "these inputs all belong to one question" — the
                  <legend> is the question, everything inside the
                  <fieldset> is the set of answers. I was using a
                  plain <label> for this before, which isn't actually
                  tied to anything since a group of radios has no
                  single input to label. -->
-            <fieldset class="form-row">
-              <legend>Rain or Sunshine?</legend>
-              <!-- both radio buttons share name="Weather preference",
+              <fieldset class="form-row">
+                <legend>Rain or Sunshine?</legend>
+                <!-- both radio buttons share name="Weather preference",
                    which is what makes them a group where only one
                    can be picked at a time -->
-              <div class="radio-group">
-                <label><input type="radio" name="Weather preference" value="Rain" checked /> Rain</label>
-                <label><input type="radio" name="Weather preference" value="Sunshine" /> Sunshine</label>
-              </div>
-            </fieldset>
-            <fieldset class="form-row">
-              <legend>Best Way To Reach You Back? (pick any)</legend>
-              <!-- checkboxes are the right input for this instead of
+                <div class="radio-group">
+                  <label
+                    ><input
+                      type="radio"
+                      name="Weather preference"
+                      value="Rain"
+                      checked
+                    />
+                    Rain</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="Weather preference"
+                      value="Sunshine"
+                    />
+                    Sunshine</label
+                  >
+                </div>
+              </fieldset>
+              <fieldset class="form-row">
+                <legend>Best Way To Reach You Back? (pick any)</legend>
+                <!-- checkboxes are the right input for this instead of
                    radios, because more than one can be true at once —
                    each one here has its own separate name, so any
                    combination can be checked -->
-              <div class="checkbox-group">
-                <label><input type="checkbox" name="Reply via Email" value="Yes" /> Email</label>
-                <label><input type="checkbox" name="Reply via Facebook" value="Yes" /> Facebook</label>
-                <label><input type="checkbox" name="Reply via GitHub" value="Yes" /> GitHub</label>
-              </div>
-            </fieldset>
-            <div class="form-row">
-              <label for="visitor-date">Best Date To Reach You Back (optional)</label>
-              <!-- type="date" gives a real date picker instead of a
+                <div class="checkbox-group">
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="Reply via Email"
+                      value="Yes"
+                    />
+                    Email</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="Reply via Facebook"
+                      value="Yes"
+                    />
+                    Facebook</label
+                  >
+                  <label
+                    ><input
+                      type="checkbox"
+                      name="Reply via GitHub"
+                      value="Yes"
+                    />
+                    GitHub</label
+                  >
+                </div>
+              </fieldset>
+              <div class="form-row">
+                <label for="visitor-date"
+                  >Best Date To Reach You Back (optional)</label
+                >
+                <!-- type="date" gives a real date picker instead of a
                    typed text field, so there is no wrong format to
                    type -->
-              <input type="date" id="visitor-date" name="Preferred contact date" />
-            </div>
-            <div class="form-row">
-              <label for="visitor-hype">How Excited Are You To Connect? (1&ndash;10)</label>
-              <!-- type="range" gives me a slider instead of typed
+                <input
+                  type="date"
+                  id="visitor-date"
+                  name="Preferred contact date"
+                />
+              </div>
+              <div class="form-row">
+                <label for="visitor-hype"
+                  >How Excited Are You To Connect? (1&ndash;10)</label
+                >
+                <!-- type="range" gives me a slider instead of typed
                    text — min/max set the two ends, value sets where
                    it starts. I did not add a live number display
                    next to it, since updating that on drag needs
                    JavaScript, which this page intentionally has none of -->
-              <input type="range" id="visitor-hype" name="Hype level (1-10)" min="1" max="10" value="5" />
-            </div>
-            <div class="form-row">
-              <label for="visitor-message">Message</label>
-              <textarea id="visitor-message" name="Message" placeholder="Say hi!"></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-          </form>
+                <input
+                  type="range"
+                  id="visitor-hype"
+                  name="Hype level (1-10)"
+                  min="1"
+                  max="10"
+                  value="5"
+                />
+              </div>
+              <div class="form-row">
+                <label for="visitor-message">Message</label>
+                <textarea
+                  id="visitor-message"
+                  name="Message"
+                  placeholder="Say hi!"
+                ></textarea>
+              </div>
+              <button type="submit">Send Message</button>
+            </form>
 
-          <!-- <address> is the correct semantic tag for "contact
+            <!-- <address> is the correct semantic tag for "contact
                info for whoever owns this page" — exactly what this
                list of direct links is, so I wrapped it instead of
                leaving it as a bare <ul> -->
-          <address>
-            <ul class="link-list">
-              <li><a href="mailto:galaridokarlian7@gmail.com">📧 Gmail: galaridokarlian7@gmail.com</a></li>
-              <li><a href="https://github.com/KianoRoku18Ino" target="_blank" rel="noopener">💻 GitHub: KianoRoku18Ino</a></li>
-              <li><a href="https://www.facebook.com/Kianforthewin" target="_blank" rel="noopener">👤 Facebook: Kianforthewin</a></li>
-              <li><a href="https://x.com/KianShoto" target="_blank" rel="noopener">✖️ X (Twitter): @KianShoto</a></li>
-            </ul>
-          </address>
+            <address>
+              <ul class="link-list">
+                <li>
+                  <a href="mailto:galaridokarlian7@gmail.com"
+                    >📧 Gmail: galaridokarlian7@gmail.com</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/KianoRoku18Ino"
+                    target="_blank"
+                    rel="noopener"
+                    >💻 GitHub: KianoRoku18Ino</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/Kianforthewin"
+                    target="_blank"
+                    rel="noopener"
+                    >👤 Facebook: Kianforthewin</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/KianShoto"
+                    target="_blank"
+                    rel="noopener"
+                    >✖️ X (Twitter): @KianShoto</a
+                  >
+                </li>
+              </ul>
+            </address>
+          </div>
         </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <img
+          src="assets/images/qcu-seal.webp"
+          alt="Quezon City University seal"
+        />
+        <p>
+          Karl Ian Galarido &middot; BSIT-1D &middot; Quezon City University
+        </p>
+        <p>
+          Built with hand-written HTML &amp; CSS for WS101, Web Systems and
+          Technologies 1.
+        </p>
       </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <img src="assets/images/qcu-seal.webp" alt="Quezon City University seal" />
-      <p>Karl Ian Galarido &middot; BSIT-1D &middot; Quezon City University</p>
-      <p>Built with hand-written HTML &amp; CSS for WS101, Web Systems and Technologies 1.</p>
-    </div>
-  </footer>
-
-</body>
+    </footer>
+  </body>
 </html>
