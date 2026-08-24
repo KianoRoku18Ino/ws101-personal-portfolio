@@ -89,8 +89,12 @@
           <p>Still learning how everything under the hood actually works.</p>
         </blockquote>
 
-        <!-- QCU / ROTC badges — each one is just a link with a
-             small logo and a bit of text inside it -->
+        <!-- QCU / ROTC / CCS badges — each one is just a link with
+             a small logo and a bit of text inside it. CCS used to be
+             its own big <figure> down below, which broke the visual
+             set these three badges are supposed to be — moved it up
+             here instead, sized and styled exactly like the other
+             two. -->
         <div class="badge-links">
           <a class="mini-badge" href="https://qcu.edu.ph/" target="_blank" rel="noopener">
             <img src="assets/images/qcu-seal.webp" alt="" />
@@ -100,25 +104,22 @@
             <img src="assets/images/rotc-crest.jpg" alt="" />
             <abbr title="National Service Training Program">NSTP</abbr> 1 &middot; <abbr title="Reserve Officers' Training Corps">ROTC</abbr>
           </a>
+          <a class="mini-badge" href="https://qcu.edu.ph/academics/colleges-and-courses-offered/college-of-information-technology/" target="_blank" rel="noopener">
+            <img src="assets/images/ccs-seal.jpg" alt="" />
+            College of Computer Studies
+          </a>
         </div>
 
-        <!-- a photo of my current university, right under the QCU
-             badge above it — the same "put a real photo next to the
+        <!-- a photo of my current university, right under the badge
+             row above it — the same "put a real photo next to the
              text" idea I used for JFBSHS and Eclaro further down in
-             Academics. Wrapped in <figure>/<figcaption> now instead
-             of a bare <img> — figcaption is the correct tag for a
-             caption that belongs to one specific image, not just
-             any paragraph sitting near it. -->
+             Academics. Wrapped in <figure>/<figcaption> instead of a
+             bare <img> — figcaption is the correct tag for a caption
+             that belongs to one specific image, not just any
+             paragraph sitting near it. -->
         <figure class="school-figure">
           <img class="school-photo" src="assets/images/qcu-campus.png" alt="Quezon City University campus building" />
           <figcaption><abbr title="Quezon City University">QCU</abbr> main campus.</figcaption>
-        </figure>
-
-        <!-- College of Computer Studies seal — my specific college
-             within QCU, where the BSIT program is housed -->
-        <figure class="school-figure">
-          <img class="school-photo" src="assets/images/ccs-seal.jpg" alt="Quezon City University College of Computer Studies seal" />
-          <figcaption>College of Computer Studies, my college within QCU.</figcaption>
         </figure>
 
         <!-- <details> is a native HTML tag that gives me a free
