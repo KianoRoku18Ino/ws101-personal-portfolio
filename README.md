@@ -8,13 +8,13 @@ https://kianoroku18ino.github.io/ws101-personal-portfolio/
 
 ## Sections
 
-| Section | What's in it |
-|---|---|
-| Hero | Name, program, profile photo |
-| About Me | Bio, QCU/ROTC/CCS links and photos, QCU Vision/Mission/Shared Values (collapsible), the QCU Hymn (YouTube embed, credited), a prayer section (audio pending), quick facts, and student orgs I'm interested in joining |
-| Academics | Honor cards + Grade 10→12 report cards, each inside a `<details>` box, with real school photos (all captioned with `<figure>`/`<figcaption>`) |
+| Section   | What's in it                                                                                                                                                                                                                                                                                      |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hero      | Name, program, profile photo                                                                                                                                                                                                                                                                      |
+| About Me  | Bio, QCU/ROTC/CCS links and photos, QCU Vision/Mission/Shared Values (collapsible), the QCU Hymn (YouTube embed, credited), the Philippine National Anthem (local audio, credited), quick facts, and student orgs I'm interested in joining                                                       |
+| Academics | Honor cards + Grade 10→12 report cards, each inside a `<details>` box, with real school photos (all captioned with `<figure>`/`<figcaption>`)                                                                                                                                                     |
 | Interests | Five hobbies, each its own `<details>` box, several split into sub-groups with `<h4>` — Gaming (currently-playing list + genres I enjoy), Anime & Movies (two real favorites + genres watched), Reading (books, light novels, manga, manhwa by genre), Music (artists I've listened to, by genre) |
-| Connect | A `mailto:` contact form (text, email, url, tel, date, radio, checkbox, range, select, textarea) and direct links (Gmail, GitHub, Facebook, X) |
+| Connect   | A `mailto:` contact form (text, email, url, tel, date, radio, checkbox, range, select, textarea) and direct links (Gmail, GitHub, Facebook, X)                                                                                                                                                    |
 
 ## Study Guide
 
@@ -30,6 +30,7 @@ Two matching pairs — same content, different filenames, because GitHub Pages n
 index.html                     — identical copy, for GitHub Pages
 style.css                      — identical copy, for GitHub Pages
 assets/images/                 — profile photo, QCU/ROTC/CCS seals, QCU campus + school photos
+assets/audio/                  — Philippine National Anthem MP3 recording
 ```
 
 ## Tech
@@ -37,4 +38,5 @@ assets/images/                 — profile photo, QCU/ROTC/CCS seals, QCU campus
 Plain HTML5 + CSS3. Google Fonts (Spectral, Public Sans). Color palette uses CSS named colors (`steelblue`, `midnightblue`, `royalblue`, `orangered`, `bisque`) chosen as the closest readable approximations of QCU's actual brand blue/orange — not exact hex matches, but each color is a plain English word right where it's defined instead of a hex code. No JavaScript, no build step — open either HTML file directly in a browser to view.
 
 ---
-*Compiled by KianoRoku18Ino*
+
+_Compiled by KianoRoku18Ino_

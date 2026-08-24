@@ -94,7 +94,7 @@ Other form elements:
 
 ## 8. Zero-JavaScript Interactivity
 
-**`<details>` / `<summary>`** is the one tag doing all of the page's "click to expand" behavior — the QCU Vision/Mission/Values box, the QCU Hymn and Prayer boxes, all three grade-level report cards, and all five hobby boxes. The browser handles open/closed state entirely on its own; no JavaScript anywhere on this page.
+**`<details>` / `<summary>`** is the one tag doing all of the page's "click to expand" behavior — the QCU Vision/Mission/Values box, the QCU Hymn and Philippine National Anthem boxes, all three grade-level report cards, and all five hobby boxes. The browser handles open/closed state entirely on its own; no JavaScript anywhere on this page.
 
 ## 9. Links
 
