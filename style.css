@@ -19,23 +19,24 @@
    look like the browser's plain default font. */
 @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap');
 
-/* My colors, kept in one place. I switched these to Quezon City
-   University's actual brand colors, pulled straight from the QCU
-   website's own source (its Kadence theme CSS defines
-   --global-palette1: #004e98 for its navy and --global-palette2:
-   #ff6700 for its orange; #2b6cb0 is the blue their heading text
-   and links use). Renamed --red/--gold to --accent-blue/
-   --accent-orange since they no longer hold red or gold anymore —
-   a variable name should say what color it actually is.
+/* My colors, kept in one place. These used to be exact hex codes
+   pulled from QCU's own website. I switched them to CSS's built-in
+   named colors instead — plain English words like "steelblue"
+   right where the color is defined, easier to read at a glance
+   than a hex code. Trade-off, and worth being honest about it:
+   none of CSS's 147 named colors hits QCU's exact blue/orange, so
+   this reads as "QCU-inspired" rather than pixel-for-pixel QCU's
+   real brand color. Picked each one to still look distinct from
+   the others, not just individually close.
    Anywhere I write var(--navy) below, it means "use this color".
    If I ever want to change my blue, I only have to edit it here
    once instead of hunting through the whole file. */
 :root {
-  --navy: #004E98;
-  --navy-deep: #002C56;
-  --accent-blue: #2B6CB0;
-  --accent-orange: #FF6700;
-  --accent-orange-soft: #FFE4CC;
+  --navy: steelblue;
+  --navy-deep: midnightblue;
+  --accent-blue: royalblue;
+  --accent-orange: orangered;
+  --accent-orange-soft: bisque;
   --bg: #FAF9F5;
   --white: #FFFFFF;
   --text: #1A1A1A;
@@ -62,6 +63,24 @@ body {
 
 a { color: var(--navy); }
 img { max-width: 100%; display: block; }
+/* <address> comes with italic text by default in every browser —
+   turning that off since nothing else on the page uses italic for
+   emphasis this way, and the link-list styling already makes this
+   block visually distinct on its own */
+address { font-style: normal; }
+/* the dotted underline abbr gets by default already signals "this
+   has a tooltip" — cursor: help reinforces that on hover */
+abbr[title] { cursor: help; }
+
+/* ACCESSIBILITY — a visible outline for keyboard users tabbing
+   through the page. :focus-visible (not plain :focus) means this
+   only shows up for keyboard/tab navigation, not for a mouse click,
+   which is the behavior browsers use it for. */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent-orange);
+  outline-offset: 2px;
+}
 
 h1, h2, h3 {
   font-family: 'Spectral', Georgia, serif;
@@ -134,7 +153,7 @@ h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
 }
 .brand img { width: 26px; height: 26px; border-radius: 50%; }
 .topnav nav { display: flex; gap: 1.1rem; flex-wrap: wrap; }
-.topnav a { color: #C9D6EE; text-decoration: none; font-size: 0.85rem; }
+.topnav a { color: #C9D6EE; text-decoration: none; font-size: 0.85rem; transition: color 0.15s ease; }
 .topnav a:hover { color: var(--accent-orange); }
 
 /* 4b. HERO */
@@ -168,20 +187,24 @@ h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
   text-decoration: none;
   color: var(--text);
   font-size: 0.85rem;
+  transition: border-color 0.15s ease;
 }
 .mini-badge:hover { border-color: var(--navy); }
 .mini-badge img { width: 24px; height: 24px; border-radius: 50%; }
 
-/* my hobbies and currently-playing lists, in the Interests section
-   further down the page — plain bullet points. I let the browser's
-   own default disc marker show and only added spacing between
-   items, instead of turning these into styled cards or pills. */
-.bullet-list {
-  list-style: disc;
-  padding-left: 1.3rem;
+/* my personal motto, styled as a pull-quote — a left border and
+   italic serif type is the common visual convention for a
+   <blockquote>, so I leaned into that instead of inventing a new
+   look for it */
+.motto {
+  border-left: 3px solid var(--accent-orange);
+  padding-left: 1rem;
+  margin: 1.4rem 0;
+  font-family: 'Spectral', Georgia, serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--navy-deep);
 }
-.bullet-list li { margin-bottom: 0.5rem; }
-.bullet-list a { color: var(--navy); }
 
 /* the <dl> pairs used in a few places — the Gaming/Anime lists
    under Interests, and the Student Organizations list below. dt is
@@ -246,6 +269,7 @@ h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
 /* a plain photo dropped inside a report box — capped height so a
    tall photo doesn't push the table too far down the page */
 .school-photo { width: 100%; max-height: 220px; object-fit: cover; border-radius: 6px; margin-top: 0.8rem; }
+.school-figure figcaption { font-size: 0.78rem; color: var(--text-light); margin-top: 0.35rem; text-align: center; }
 
 /* real <table> markup, used only where the data actually has
    rows and columns — my grade reports */
@@ -312,8 +336,12 @@ button[type="submit"] {
   padding: 0.7rem 1.3rem;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.15s ease;
 }
-button[type="submit"]:hover { background: #A50E1E; }
+/* was a hardcoded hex left over from before I renamed --red to
+   --accent-blue — it never got updated, so it had drifted off the
+   palette entirely. var(--navy) keeps it in the same blue family. */
+button[type="submit"]:hover { background: var(--navy); }
 
 .link-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
 .link-list a {
@@ -325,6 +353,7 @@ button[type="submit"]:hover { background: #A50E1E; }
   text-decoration: none;
   color: var(--text);
   font-size: 0.9rem;
+  transition: border-color 0.15s ease;
 }
 .link-list a:hover { border-color: var(--navy); }
 

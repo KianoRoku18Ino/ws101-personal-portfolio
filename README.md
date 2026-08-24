@@ -11,10 +11,14 @@ https://kianoroku18ino.github.io/ws101-personal-portfolio/
 | Section | What's in it |
 |---|---|
 | Hero | Name, program, profile photo |
-| About Me | Bio, QCU/ROTC links, QCU Vision/Mission/Shared Values (collapsible), quick facts, student orgs I'm applying to (honestly tagged "Interviewing," not claimed as membership) |
-| Academics | Honor cards + Grade 10→12 report cards, each inside a `<details>` box, with real school photos |
+| About Me | Bio, QCU/ROTC/CCS links and photos, QCU Vision/Mission/Shared Values (collapsible), quick facts, student orgs I'm applying to (honestly tagged "Interviewing," not claimed as membership) |
+| Academics | Honor cards + Grade 10→12 report cards, each inside a `<details>` box, with real school photos (all captioned with `<figure>`/`<figcaption>`) |
 | Interests | Five hobbies, each its own `<details>` box — Gaming expands into a full currently-playing list (`<dl>`, each title linking to its own official site); Anime & Movies holds my two real movie picks; Music is a placeholder for a future Spotify-style song/artist list |
-| Connect | A `mailto:` contact form (text, email, url, radio, checkbox, range, select, textarea) and direct links (Gmail, GitHub, Facebook, X) |
+| Connect | A `mailto:` contact form (text, email, url, tel, date, radio, checkbox, range, select, textarea) and direct links (Gmail, GitHub, Facebook, X) |
+
+## Study Guide
+
+`STUDY-GUIDE.md` — a full tag-by-tag, attribute-by-attribute breakdown of everything used in this project and why, for reviewing before a quiz or a walkthrough defense.
 
 ## File Structure
 
@@ -25,12 +29,12 @@ Two matching pairs — same content, different filenames, because GitHub Pages n
 260003GalaridoStyle.css        — its stylesheet
 index.html                     — identical copy, for GitHub Pages
 style.css                      — identical copy, for GitHub Pages
-assets/images/                 — profile photo, QCU/ROTC seals, QCU campus + school photos
+assets/images/                 — profile photo, QCU/ROTC/CCS seals, QCU campus + school photos
 ```
 
 ## Tech
 
-Plain HTML5 + CSS3. Google Fonts (Spectral, Public Sans). Color palette pulled from QCU's own site (navy `#004E98`, accent blue `#2B6CB0`, accent orange `#FF6700`). No JavaScript, no build step — open either HTML file directly in a browser to view.
+Plain HTML5 + CSS3. Google Fonts (Spectral, Public Sans). Color palette uses CSS named colors (`steelblue`, `midnightblue`, `royalblue`, `orangered`, `bisque`) chosen as the closest readable approximations of QCU's actual brand blue/orange — not exact hex matches, but each color is a plain English word right where it's defined instead of a hex code. No JavaScript, no build step — open either HTML file directly in a browser to view.
 
 ---
 *Compiled by KianoRoku18Ino*

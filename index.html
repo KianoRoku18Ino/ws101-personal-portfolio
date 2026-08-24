@@ -19,7 +19,7 @@
   <!-- this line tells the browser to use the phone's real screen
        width instead of showing a zoomed-out desktop view first -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karl Ian Galarido — Personal Web Page</title>
+  <title>Karl Ian Galarido | Personal Web Page</title>
   <meta name="description" content="Personal web page of Karl Ian Ranay Galarido, 1st Year BSIT student at Quezon City University." />
   <!-- linking my external CSS file, as required by the activity -->
   <link rel="stylesheet" href="style.css" />
@@ -51,9 +51,9 @@
       <div class="wrap">
         <img class="profile-photo" src="assets/images/profile.jpg" alt="Photo of Karl Ian Galarido" />
         <h1>Karl Ian R. Galarido</h1>
-        <p class="role-line">1st Year BSIT-1D &middot; Quezon City University</p>
+        <p class="role-line">1st Year <abbr title="Bachelor of Science in Information Technology">BSIT</abbr>-1D &middot; Quezon City University</p>
         <p class="tagline">
-          Web Systems and Technologies 1 (WS101) student page —
+          Web Systems and Technologies 1 (<abbr title="Web Systems and Technologies 1">WS101</abbr>) student page,
           built with plain HTML and CSS, no frameworks, no JavaScript.
         </p>
       </div>
@@ -75,12 +75,20 @@
         <p>
           I'm a first-year BSIT student at Quezon City University,
           currently focused on building a solid foundation in my
-          major program subjects — Introduction to Computing (CC101),
+          major program subjects: Introduction to Computing (CC101),
           Fundamentals of Programming (CC102), and Web Systems and
-          Technologies 1 (WS101). Outside of coursework, I'm generally
-          curious about technology and enjoy learning how things
-          work under the hood.
+          Technologies 1 (WS101). Outside of coursework, I'm
+          <em>genuinely</em> curious about technology and enjoy
+          learning how things work under the hood.
         </p>
+
+        <!-- a short personal motto as a pull-quote. Pulled from my
+             own words in the bio paragraph right above instead of
+             writing something new from scratch, since a motto
+             should actually sound like me. -->
+        <blockquote class="motto">
+          <p>Still learning how everything under the hood actually works.</p>
+        </blockquote>
 
         <!-- QCU / ROTC badges — each one is just a link with a
              small logo and a bit of text inside it -->
@@ -91,15 +99,28 @@
           </a>
           <a class="mini-badge" href="https://www.facebook.com/qcurotcunitpage" target="_blank" rel="noopener">
             <img src="assets/images/rotc-crest.jpg" alt="" />
-            NSTP 1 &middot; ROTC
+            <abbr title="National Service Training Program">NSTP</abbr> 1 &middot; <abbr title="Reserve Officers' Training Corps">ROTC</abbr>
           </a>
         </div>
 
         <!-- a photo of my current university, right under the QCU
              badge above it — the same "put a real photo next to the
              text" idea I used for JFBSHS and Eclaro further down in
-             Academics -->
-        <img class="school-photo" src="assets/images/qcu-campus.png" alt="Quezon City University campus building" />
+             Academics. Wrapped in <figure>/<figcaption> now instead
+             of a bare <img> — figcaption is the correct tag for a
+             caption that belongs to one specific image, not just
+             any paragraph sitting near it. -->
+        <figure class="school-figure">
+          <img class="school-photo" src="assets/images/qcu-campus.png" alt="Quezon City University campus building" />
+          <figcaption><abbr title="Quezon City University">QCU</abbr> main campus.</figcaption>
+        </figure>
+
+        <!-- College of Computer Studies seal — my specific college
+             within QCU, where the BSIT program is housed -->
+        <figure class="school-figure">
+          <img class="school-photo" src="assets/images/ccs-seal.jpg" alt="Quezon City University College of Computer Studies seal" />
+          <figcaption>College of Computer Studies, my college within QCU.</figcaption>
+        </figure>
 
         <!-- <details> is a native HTML tag that gives me a free
              show/hide box. I did not write any JavaScript for
@@ -152,7 +173,7 @@
       <div class="wrap">
         <span class="eyebrow">Academic Achievements</span>
         <h2>Academics</h2>
-        <p class="lede">My honors first, then my full official grades underneath — click a grade level to open its report card.</p>
+        <p class="lede">My honors first, then my full official grades underneath. Click a grade level to open its report card.</p>
 
         <div class="badge-row">
           <div class="badge-card">
@@ -174,15 +195,18 @@
 
         <!-- Grade 10 -->
         <details class="report-box">
-          <summary>Grade 10 — Judge Feliciano Belmonte Sr. HS (GA 93)</summary>
+          <summary>Grade 10 &middot; Judge Feliciano Belmonte Sr. HS (GA 93)</summary>
           <!-- a photo of the actual school building, so this
                report card isn't just a wall of numbers -->
-          <img class="school-photo" src="assets/images/jfbshs-photo.jpg" alt="Judge Feliciano Belmonte Sr. High School building" />
+          <figure class="school-figure">
+            <img class="school-photo" src="assets/images/jfbshs-photo.jpg" alt="Judge Feliciano Belmonte Sr. High School building" />
+            <figcaption>Judge Feliciano Belmonte Sr. High School, Grade 10.</figcaption>
+          </figure>
           <!-- this IS a real table: subjects down the rows, quarters
                across the columns. That row/column relationship is
                why I used a <table> here instead of another <ul> -->
           <table>
-            <caption>Report on Learning Progress Achievement — SY 2022&ndash;2023</caption>
+            <caption>Report on Learning Progress Achievement &middot; SY 2022&ndash;2023</caption>
             <thead>
               <tr><th scope="col">Learning Area</th><th scope="col">Q1</th><th scope="col">Q2</th><th scope="col">Q3</th><th scope="col">Q4</th><th scope="col">Final</th></tr>
             </thead>
@@ -202,10 +226,13 @@
 
         <!-- Grade 11 -->
         <details class="report-box">
-          <summary>Grade 11 — Eclaro Academy, Inc. (SY 2023&ndash;2024)</summary>
+          <summary>Grade 11 &middot; Eclaro Academy, Inc. (SY 2023&ndash;2024)</summary>
           <!-- a photo of the school's own signage, same idea as the
                building photo on the Grade 10 report card above -->
-          <img class="school-photo" src="assets/images/eclaro-photo.jpg" alt="Eclaro Academy signage" />
+          <figure class="school-figure">
+            <img class="school-photo" src="assets/images/eclaro-photo.jpg" alt="Eclaro Academy signage" />
+            <figcaption>Eclaro Academy, Inc.: Grade 11 and Grade 12.</figcaption>
+          </figure>
           <table>
             <caption>1st Semester Final Grades</caption>
             <thead><tr><th scope="col">Subject</th><th scope="col">1st Qtr</th><th scope="col">2nd Qtr</th><th scope="col">Final</th></tr></thead>
@@ -246,7 +273,7 @@
 
         <!-- Grade 12 -->
         <details class="report-box">
-          <summary>Grade 12 — Eclaro Academy, Inc. (GWA 95, High Honors)</summary>
+          <summary>Grade 12 &middot; Eclaro Academy, Inc. (GWA 95, High Honors)</summary>
           <table>
             <caption>1st Semester Final Grades</caption>
             <thead><tr><th scope="col">Subject</th><th scope="col">1st Qtr</th><th scope="col">2nd Qtr</th><th scope="col">Final</th></tr></thead>
@@ -295,7 +322,7 @@
       <div class="wrap">
         <span class="eyebrow">Personal Interests</span>
         <h2>Hobbies &amp; Games</h2>
-        <p class="lede">What I actually spend my free time on — tap a hobby to open it.</p>
+        <p class="lede">What I actually spend my free time on. Tap a hobby to open it.</p>
 
         <h3 class="mini-title">Hobbies</h3>
         <!-- each hobby is now its own <details> box, same show/hide
@@ -315,27 +342,27 @@
                the rights to host. -->
           <dl class="dl-list">
             <dt><a href="https://wutheringwaves.kurogames.com/en/" target="_blank" rel="noopener">Wuthering Waves</a></dt>
-            <dd>Open-world action RPG &mdash; Kuro Games.</dd>
+            <dd>Open-world action RPG, by Kuro Games.</dd>
             <dt><a href="https://genshin.hoyoverse.com/en/" target="_blank" rel="noopener">Genshin Impact</a></dt>
-            <dd>Open-world gacha RPG &mdash; HoYoverse.</dd>
+            <dd>Open-world gacha RPG, by HoYoverse.</dd>
             <dt><a href="https://www.arknights.global/" target="_blank" rel="noopener">Arknights</a></dt>
-            <dd>Tower-defense gacha strategy &mdash; Hypergryph.</dd>
+            <dd>Tower-defense gacha strategy, by Hypergryph.</dd>
             <dt><a href="https://nte.perfectworld.com/" target="_blank" rel="noopener">Neverness to Everness</a></dt>
-            <dd>Open-world urban fantasy RPG &mdash; Perfect World.</dd>
+            <dd>Open-world urban fantasy RPG, by Perfect World.</dd>
             <dt><a href="https://duetnightabyss.dna-panstudio.com/en" target="_blank" rel="noopener">Duet Night Abyss</a></dt>
-            <dd>Action RPG &mdash; NetEase.</dd>
+            <dd>Action RPG, by NetEase.</dd>
             <dt><a href="https://callofdragons.farlightgames.com/" target="_blank" rel="noopener">Call of Dragons</a></dt>
-            <dd>Strategy / RTS &mdash; Farlight Games.</dd>
+            <dd>Strategy / RTS, by Farlight Games.</dd>
             <dt><a href="https://www.wherewindsmeetgame.com/m/" target="_blank" rel="noopener">Where Winds Meet</a></dt>
-            <dd>Open-world wuxia action RPG &mdash; Everstone Studio.</dd>
+            <dd>Open-world wuxia action RPG, by Everstone Studio.</dd>
             <dt><a href="https://m.mobilelegends.com/" target="_blank" rel="noopener">Mobile Legends: Bang Bang</a></dt>
-            <dd>5v5 MOBA &mdash; Moonton.</dd>
+            <dd>5v5 MOBA, by Moonton.</dd>
             <dt><a href="https://www.callofduty.com/mobile" target="_blank" rel="noopener">Call of Duty: Mobile</a></dt>
-            <dd>FPS &mdash; Activision.</dd>
+            <dd>FPS, by Activision.</dd>
             <dt><a href="https://www.minecraft.net/" target="_blank" rel="noopener">Minecraft</a></dt>
-            <dd>Sandbox survival &amp; building &mdash; Mojang.</dd>
+            <dd>Sandbox survival &amp; building, by Mojang.</dd>
             <dt><a href="https://www.roblox.com/" target="_blank" rel="noopener">Roblox</a></dt>
-            <dd>User-generated game platform &mdash; Roblox Corp.</dd>
+            <dd>User-generated game platform, by Roblox Corp.</dd>
           </dl>
         </details>
 
@@ -351,7 +378,7 @@
             <dt>Flow</dt>
             <dd>Favorite movie.</dd>
           </dl>
-          <p class="placeholder-note">Anime list &mdash; still deciding on favorites, will fill this in later.</p>
+          <p class="placeholder-note">Anime list: still deciding on favorites, will fill this in later.</p>
         </details>
 
         <details class="report-box">
@@ -361,12 +388,12 @@
 
         <details class="report-box">
           <summary>🎧 Music</summary>
-          <p class="placeholder-note">List coming soon &mdash; planning to list it the way Spotify does: song title, artist, maybe the label, once I've picked favorites.</p>
+          <p class="placeholder-note">List coming soon. Planning to list it the way Spotify does: song title, artist, maybe the label, once I've picked favorites.</p>
         </details>
 
         <details class="report-box">
           <summary>💡 Learning New Tech</summary>
-          <p class="placeholder-note">Whatever I'm picking up outside of coursework at the moment &mdash; right now that's mostly just going deeper on HTML/CSS through this activity itself.</p>
+          <p class="placeholder-note">Whatever I'm picking up outside of coursework at the moment. Right now that's mostly just going deeper on HTML/CSS through this activity itself.</p>
         </details>
       </div>
     </section>
@@ -401,6 +428,15 @@
                    browser checks this looks like a real web address
                    before letting the form submit -->
               <input type="url" id="visitor-site" name="Website" placeholder="https://..." />
+            </div>
+            <div class="form-row">
+              <label for="visitor-phone">Your Phone (optional)</label>
+              <!-- type="tel" does not format-check the way
+                   email/url do — phone formats vary too much
+                   country to country for the browser to guess — but
+                   it still tells phones to show a numeric keypad
+                   instead of a full keyboard -->
+              <input type="tel" id="visitor-phone" name="Phone" placeholder="09XX XXX XXXX" />
             </div>
             <div class="form-row">
               <label for="visitor-how">How Do You Know Me?</label>
@@ -441,6 +477,13 @@
               </div>
             </fieldset>
             <div class="form-row">
+              <label for="visitor-date">Best Date To Reach You Back (optional)</label>
+              <!-- type="date" gives a real date picker instead of a
+                   typed text field, so there is no wrong format to
+                   type -->
+              <input type="date" id="visitor-date" name="Preferred contact date" />
+            </div>
+            <div class="form-row">
               <label for="visitor-hype">How Excited Are You To Connect? (1&ndash;10)</label>
               <!-- type="range" gives me a slider instead of typed
                    text — min/max set the two ends, value sets where
@@ -456,12 +499,18 @@
             <button type="submit">Send Message</button>
           </form>
 
-          <ul class="link-list">
-            <li><a href="mailto:galaridokarlian7@gmail.com">📧 Gmail — galaridokarlian7@gmail.com</a></li>
-            <li><a href="https://github.com/KianoRoku18Ino" target="_blank" rel="noopener">💻 GitHub — KianoRoku18Ino</a></li>
-            <li><a href="https://www.facebook.com/Kianforthewin" target="_blank" rel="noopener">👤 Facebook — Kianforthewin</a></li>
-            <li><a href="https://x.com/KianShoto" target="_blank" rel="noopener">✖️ X (Twitter) — @KianShoto</a></li>
-          </ul>
+          <!-- <address> is the correct semantic tag for "contact
+               info for whoever owns this page" — exactly what this
+               list of direct links is, so I wrapped it instead of
+               leaving it as a bare <ul> -->
+          <address>
+            <ul class="link-list">
+              <li><a href="mailto:galaridokarlian7@gmail.com">📧 Gmail: galaridokarlian7@gmail.com</a></li>
+              <li><a href="https://github.com/KianoRoku18Ino" target="_blank" rel="noopener">💻 GitHub: KianoRoku18Ino</a></li>
+              <li><a href="https://www.facebook.com/Kianforthewin" target="_blank" rel="noopener">👤 Facebook: Kianforthewin</a></li>
+              <li><a href="https://x.com/KianShoto" target="_blank" rel="noopener">✖️ X (Twitter): @KianShoto</a></li>
+            </ul>
+          </address>
         </div>
       </div>
     </section>
@@ -472,7 +521,7 @@
     <div class="wrap">
       <img src="assets/images/qcu-seal.webp" alt="Quezon City University seal" />
       <p>Karl Ian Galarido &middot; BSIT-1D &middot; Quezon City University</p>
-      <p>Built with hand-written HTML &amp; CSS for WS101 — Web Systems and Technologies 1.</p>
+      <p>Built with hand-written HTML &amp; CSS for WS101, Web Systems and Technologies 1.</p>
     </div>
   </footer>
 
