@@ -123,6 +123,11 @@ section {
 h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
 .lede { color: var(--text-light); margin-bottom: 1.6rem; }
 .mini-title { font-size: 1.05rem; margin: 1.5rem 0 0.6rem; }
+/* a sub-heading one step smaller than .mini-title, for grouping
+   content inside a single hobby's <details> box (e.g. splitting
+   Reading into Books / Light Novels / Manga / Manhwa) */
+.report-box h4, .info-box h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent-blue); margin: 1rem 0 0.4rem; }
+.report-box h4:first-of-type, .info-box h4:first-of-type { margin-top: 0; }
 
 /* 4a. TOP NAV
    position: sticky keeps the nav bar visible at the top of the
@@ -217,10 +222,13 @@ h2 { font-size: 1.7rem; margin-bottom: 0.5rem; }
 .dl-list dd { margin: 0.15rem 0 0 0; font-size: 0.85rem; color: var(--text-light); }
 .placeholder-note { font-size: 0.85rem; color: var(--text-light); font-style: italic; margin-top: 0.5rem; }
 
-/* a small pill next to an org name showing where I actually stand
-   with it — "Interviewing" instead of just listing it like a
-   confirmed membership I don't have yet */
-.status-tag { display: inline-block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent-orange); border: 1px solid var(--accent-orange); border-radius: 999px; padding: 0.05rem 0.55rem; margin-left: 0.4rem; vertical-align: middle; }
+/* brought back for the QCU Hymn embed in About Me — same idea as
+   before the Media section removal, just scoped to this one use now
+   instead of a whole dedicated section */
+.embed-box { width: 100%; height: 220px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 0.7rem; }
+.embed-box iframe { width: 100%; height: 100%; border: 0; }
+.credit-line { font-size: 0.78rem; color: var(--text-light); margin-top: 0.6rem; }
+
 
 /* <details>/<summary> already comes with a working show/hide
    arrow built into the browser, so I did not need to style or

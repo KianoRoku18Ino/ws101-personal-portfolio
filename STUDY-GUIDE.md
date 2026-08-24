@@ -28,7 +28,7 @@ Every HTML tag, attribute, and CSS feature actually used in `260003GalaridoPortf
 
 ## 3. Text Content & Semantics
 
-- **`<h1>` / `<h2>` / `<h3>`** — one `<h1>` (my name, in the hero), `<h2>` per section title, `<h3>` for sub-labels inside a section (`Quick Facts`, `Student Organizations`, `Hobbies`). Headings nest by importance, not by font size — CSS handles how big they look.
+- **`<h1>` / `<h2>` / `<h3>` / `<h4>`** — one `<h1>` (my name, in the hero), `<h2>` per section title, `<h3>` for sub-labels inside a section (`Quick Facts`, `Hobbies`), `<h4>` one level deeper for splitting a single hobby's content into sub-groups (Reading's Books / Light Novels / Manga / Manhwa). Headings nest by importance, not by font size — CSS handles how big they look, and the nesting still has to go in order (no skipping from `<h2>` straight to `<h4>`).
 - **`<p>`** — every ordinary paragraph of text.
 - **`<strong>`** — bold with actual semantic weight (marks something as important), used inside the QCU Vision/Mission/Values box (`<strong>Vision:</strong>`). Different from just making text visually bold with CSS — `<strong>` means something to assistive tech too.
 - **`<em>`** — emphasis with actual semantic weight, the italic equivalent of `<strong>`. Used once, in the bio paragraph (`<em>genuinely</em> curious`), the same way you'd naturally stress that word out loud.
@@ -40,7 +40,7 @@ Every HTML tag, attribute, and CSS feature actually used in `260003GalaridoPortf
   - `NSTP` → National Service Training Program (About Me badge)
   - `ROTC` → Reserve Officers' Training Corps (About Me badge)
   - `QCU` → Quezon City University (campus photo caption)
-- **`<span>`** — a generic inline wrapper with no meaning of its own, used only when I need to style a piece of text differently than the text around it (`.eyebrow`, `.fact-label`, `.fact-value`, `.status-tag`) and no more specific tag fits.
+- **`<span>`** — a generic inline wrapper with no meaning of its own, used only when I need to style a piece of text differently than the text around it (`.eyebrow`, `.fact-label`, `.fact-value`) and no more specific tag fits.
 
 ## 4. Lists — Two Kinds, Used On Purpose
 
@@ -64,7 +64,8 @@ No `<ol>` is used anywhere on the page currently — nothing in the content is i
 ## 6. Images & Captions
 
 - **`<img src="..." alt="...">`** — every photo and seal on the page. `alt=""` (empty) is used deliberately on purely decorative images sitting right next to text that already says the same thing (the QCU seal in the badge, next to the word "Quezon City University") — an empty `alt` tells a screen reader to skip it, not that something's broken. Descriptive `alt` text is used everywhere the image itself carries information a screen reader user would otherwise miss (the profile photo, the school building photos).
-- **`<figure>` / `<figcaption>`** — wraps the QCU campus photo, the College of Computer Studies seal, and the Grade 10/11 school photos. `<figure>` groups an image with content that explains it; `<figcaption>` is the specific tag for that caption text — using a plain `<p>` next to an image wouldn't tell a screen reader the two are connected, `<figcaption>` inside `<figure>` does.
+- **`<figure>` / `<figcaption>`** — wraps the QCU campus photo and the Grade 10/11 school photos (the CCS seal moved into the badge row as a plain icon, so it no longer needs its own caption). `<figure>` groups an image with content that explains it; `<figcaption>` is the specific tag for that caption text — using a plain `<p>` next to an image wouldn't tell a screen reader the two are connected, `<figcaption>` inside `<figure>` does.
+- **`<iframe>`** — one use, embedding the QCU Hymn from its official YouTube upload in About Me. This is the correct way to share someone else's copyrighted recording: an embed points back to the original, hosted by its owner, rather than copying the file. I credit the performers/arrangers by name next to it — that's attribution, not reproduction, so it's fine even though I don't reproduce the actual lyrics anywhere on the page.
 
 ## 7. Forms — Full Input Surface
 
@@ -93,7 +94,7 @@ Other form elements:
 
 ## 8. Zero-JavaScript Interactivity
 
-**`<details>` / `<summary>`** is the one tag doing all of the page's "click to expand" behavior — the QCU Vision/Mission/Values box, all three grade-level report cards, and all five hobby boxes. The browser handles open/closed state entirely on its own; no JavaScript anywhere on this page.
+**`<details>` / `<summary>`** is the one tag doing all of the page's "click to expand" behavior — the QCU Vision/Mission/Values box, the QCU Hymn and Prayer boxes, all three grade-level report cards, and all five hobby boxes. The browser handles open/closed state entirely on its own; no JavaScript anywhere on this page.
 
 ## 9. Links
 
